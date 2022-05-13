@@ -41,7 +41,6 @@ body {
 
 html,
 body {
-    background-color: #7dcfcf;
   overflow-x: hidden !important;
 }
 
@@ -141,7 +140,6 @@ form button,
 .overlay {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   right: 0;
   top: 0;
@@ -191,7 +189,6 @@ form button,
 }
 
 .main-content .profile-layer {
-  background-color: #bebcbc;  
   width: 40%;
   position: absolute;
   right: 0;
@@ -398,7 +395,6 @@ form button,
 }
 
 .top-content .about-layer {
-    background-color: sandybrown;
   padding: 0 56px 0px 38px;
 }
 
