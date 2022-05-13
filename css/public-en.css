@@ -605,7 +605,7 @@ form button,
     display: inline-table;
     padding-right: 55px;
     color: #646777;
-    font-size: 14px
+    font-size: 15px;
 }
 
 .my-certificates .inner .item a:hover span i {
@@ -1208,6 +1208,7 @@ footer p a {
 }
 .work-sample-image{
     height: 150px;
+    width:350px;
 }
 
 .netfoundation-logo {
