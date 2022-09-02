@@ -39,6 +39,12 @@ body {
   word-spacing: -1px;
 }
 
+.translate{
+  margin-right: 770px;
+  margin-top: 3px;
+  text-shadow: 2px 2px #7eff1e;
+}
+
 html,
 body {
   overflow-x: hidden !important;
@@ -185,7 +191,7 @@ form button,
 .main-content .top-content {
   padding-right: 38%;
   position: relative;
-  padding-top: 35px;
+  padding-top: 32px;
 }
 
 .main-content .profile-layer {
