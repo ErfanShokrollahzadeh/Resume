@@ -39,9 +39,9 @@ body {
   word-spacing: -1px;
 }
 
-.translate{
-  margin-right: 770px;
-  margin-top: 3px;
+.translate {
+  display: flex;
+  margin: 0 0 -25px 0;
   text-shadow: 2px 2px #7eff1e;
 }
 
@@ -1031,6 +1031,14 @@ footer p a {
 
 .padding-text-0 {
   padding: 0 !important;
+}
+
+@media screen and (min-width: 992px) {
+  .translate {
+    display: flex;
+    margin: 0 535px -25px 0;
+    text-shadow: 2px 2px #7eff1e;
+  }
 }
 
 @media screen and (max-width: 1199px) {
