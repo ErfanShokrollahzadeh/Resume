@@ -87,7 +87,9 @@ h6 {
 img {
   max-width: 100%;
 }
-
+video {
+  max-width: 100%;
+}
 /********** Transition ************/
 a,
 i,
@@ -1205,8 +1207,8 @@ footer p a {
   float: left !important;
 }
 .work-sample-image {
-  height: 150px;
-  width: 350px;
+  height: 172px;
+  width: 343px;
 }
 
 .netfoundation-logo {
