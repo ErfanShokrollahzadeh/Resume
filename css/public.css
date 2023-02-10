@@ -443,6 +443,7 @@ form button,
 
 .tab-content-layer > div.active {
   display: block;
+  margin-top: 18px;
 }
 
 .tab-content-layer section {
