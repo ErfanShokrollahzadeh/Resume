@@ -90,7 +90,7 @@ h6 {
 }
 
 img {
-  max-width: 107%;
+  max-width: 110%;
 }
 video {
   max-width: 100%;
@@ -248,7 +248,7 @@ form button,
 
 .main-content .profile-layer .img-layer img {
   width: 110%;
-  height: 113%;
+  height: 110%;
   border-radius: 100%;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
