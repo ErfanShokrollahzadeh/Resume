@@ -134,7 +134,7 @@ form button,
 @media screen and (max-width: 320px) {
   .translate-en {
     display: flex;
-    margin: 0 0px -25px 60px;
+    margin: 0 0px -25px 72px;
     padding-top: 5px;
     text-shadow: 2px 2px #7eff1e;
   }

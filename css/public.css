@@ -44,6 +44,8 @@ body {
   display: flex;
   margin: 0 0 -25px 0;
   text-shadow: 2px 2px #7eff1e;
+  font-size: 13px;
+  padding-top: 5px;
 }
 
 html,
@@ -1038,10 +1040,10 @@ footer p a {
   padding: 0 !important;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (max-width: 320px) {
   .translate {
     display: flex;
-    margin: 0 0px -25px 40px;
+    margin: 0 -10px -25px 40px;
     padding-top: 5px;
     text-shadow: 2px 2px #7eff1e;
   }
