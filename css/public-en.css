@@ -86,7 +86,7 @@ h6 {
 }
 
 img {
-  max-width: 110%;
+  max-width: 100%;
 }
 video {
   max-width: 100%;
@@ -129,6 +129,30 @@ form button,
   visibility: hidden;
   height: 0;
   line-height: 0;
+}
+
+@media screen and (max-width: 320px) {
+  .translate-en {
+    display: flex;
+    margin: 0 0px -25px 60px;
+    padding-top: 5px;
+    text-shadow: 2px 2px #7eff1e;
+  }
+}
+
+@media screen and (min-width: 321px) {
+  .translate-en {
+    display: flex;
+    margin: 0 0px -25px 90px;
+    padding-top: 5px;
+    text-shadow: 2px 2px #7eff1e;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .translate-en {
+    display: none;
+  }
 }
 
 .box-shadow {
