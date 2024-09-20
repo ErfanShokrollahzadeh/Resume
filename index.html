@@ -89,6 +89,34 @@
 
       gtag("config", "G-2HBQMBEXMK");
     </script>
+    <script>
+    document.getElementById('commentForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message')
+        };
+
+        fetch('https://your-backend-endpoint.com/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            alert('Your comment has been sent successfully!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('There was an error sending your comment.');
+        });
+    });
+</script>
   </head>
 
   <body>
@@ -1719,19 +1747,19 @@
                   <li><i class="icon-mobile"></i> 093334920731</li>
                   <li><i class="icon-email"></i> erfan.shokr300@gmail.com</li>
                 </ul>
-                <form class="form-style">
+                <form id="commentForm"  class="form-style">
                   <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                      <input type="text" name="" placeholder="نام " />
+                      <input type="text" name="name" placeholder="نام " />
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                      <input type="text" name="" placeholder=" ایمیل " />
+                      <input type="text" name="email" placeholder=" ایمیل " />
                     </div>
                     <div class="col-xs-12">
-                      <textarea placeholder=" متن پیغام "></textarea>
+                      <textarea name="message" placeholder=" متن پیغام "></textarea>
                     </div>
                     <div class="col-md-4 col-sm-5 col-xs-12 pull-left">
-                      <button class="button-st blue">ثبت پيغام</button>
+                      <button type="submit" class="button-st blue">ثبت پيغام</button>
                     </div>
                   </div>
                 </form>
@@ -1755,5 +1783,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/public.js"></script>
     <script src="js/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
