@@ -31,7 +31,7 @@
 }
 
 body {
-  background-color: #dbdbdb;
+  background-color: #b7b7b7;
   margin: 0;
   padding: 0;
   font-family: "IRANSans", tahoma;
@@ -277,7 +277,7 @@ form button,
 }
 
 .main-content .profile-layer .content {
-  padding: 7px 0 0;
+  padding: 25px 0 0;
   text-align: center;
   width: 100%;
 }
