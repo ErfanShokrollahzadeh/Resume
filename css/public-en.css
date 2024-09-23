@@ -215,7 +215,7 @@ form button,
 .main-content .top-content {
   padding-right: 38%;
   position: relative;
-  padding-top: 10px;
+  padding-top: 0;
 }
 
 .main-content .profile-layer {
@@ -277,7 +277,7 @@ form button,
 }
 
 .main-content .profile-layer .content {
-  padding: 75px 0 0;
+  padding: 7px 0 0;
   text-align: center;
   width: 100%;
 }
@@ -593,7 +593,7 @@ form button,
 }
 
 .my-certificates .inner .item a {
-  border: 1px solid #ededf1;
+  border: 1px solid #4949ff;
   display: block;
   border-radius: 4px;
   -moz-border-radius: 4px;
@@ -603,7 +603,7 @@ form button,
 }
 
 .my-certificates .inner .item a span {
-  border-left: 1px solid #ededf1;
+  border-left: 1px solid #7a7a81;
   display: inline-table;
   width: 55px;
   line-height: 50px;
@@ -1232,8 +1232,8 @@ footer p a {
   float: left !important;
 }
 .work-sample-image {
-  height: 172px;
-  width: 343px;
+  height: 100%;
+  width: 100%;
 }
 
 .netfoundation-logo {
