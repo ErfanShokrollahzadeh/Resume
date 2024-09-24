@@ -90,33 +90,35 @@
       gtag("config", "G-2HBQMBEXMK");
     </script>
     <script>
-    document.getElementById('commentForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+      document
+        .getElementById("commentForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-        const formData = new FormData(this);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            message: formData.get('message')
-        };
+          const formData = new FormData(this);
+          const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            message: formData.get("message"),
+          };
 
-        fetch('https://your-backend-endpoint.com/send-email', {
-            method: 'POST',
+          fetch("https://your-backend-endpoint.com/send-email", {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-            alert('Your comment has been sent successfully!');
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('There was an error sending your comment.');
+            body: JSON.stringify(data),
+          })
+            .then((response) => response.json())
+            .then((result) => {
+              alert("Your comment has been sent successfully!");
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("There was an error sending your comment.");
+            });
         });
-    });
-</script>
+    </script>
   </head>
 
   <body>
@@ -124,8 +126,10 @@
 
     <div class="main-content">
       <div class="container">
-        <h1 class="translate" style="font-size: 15px;">For Translate This Page Click On USA Flag</h1>
-        <div class="row float-left" style="margin-left: -30px;">
+        <h1 class="translate" style="font-size: 15px">
+          For Translate This Page Click On USA Flag
+        </h1>
+        <div class="row float-left" style="margin-left: -30px">
           <a href="index.html"
             ><img src="images/fa.png" height="31px" width="35px"
           /></a>
@@ -142,8 +146,9 @@
             <div class="img-layer"><img src="images/avator3.JPG" /></div>
             <section class="content">
               <h1>عرفان شكرالله زاده</h1>
+              <h2>مهندس نرم افزار</h2>
               <h2>برنامه نویس وب و موبایل</h2>
-              <h2>Full Stack python(Django)</h2>
+              <h2>Full Stack Python(Django) Development</h2>
               <h2>برنامه نویس ، طراح گرافیک ، مدرس</h2>
               <h2>erfan.shokr300@gmail.com</h2>
               <h2>09334920731</h2>
@@ -272,6 +277,19 @@
               <a href="https://github.com/ErfanShokrollahzade/mini-project-Sacc"
                 >resturunte webstie with Sass framework</a
               ><br />
+              برای دیدن پروژه های بیشتر به
+              <a
+                href="#work_sample"
+                style="color: #f48024; text-decoration: none"
+                >بخش نمونه کارهای من</a
+              >
+              بروید
+              <style>
+                a[href="#work_sample"]:hover {
+                  font-size: 18px;
+                  text-shadow: 3px 3px 6px green;
+                }
+              </style>
             </p>
             <p>
               همچنین در سال 1401 باز هم برای کمک به جامعه برنامه نویسان ایرانی ،
@@ -295,7 +313,7 @@
           <!-- /about -->
         </div>
         <!-- /Top Content -->
-
+<!-- ================================================================================================================== -->
         <!-- tab content -->
         <div class="tab-content-layer">
           <!-- resume tab -->
@@ -687,7 +705,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                 <div class="item">
+                <div class="item">
                   <header>
                     <h2 style="color: #f48024">Docker</h2>
                     <span>70%</span>
@@ -705,7 +723,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                  <div class="item">
+                <div class="item">
                   <header>
                     <h2 style="color: #f48024">PyScript</h2>
                     <span>50%</span>
@@ -723,9 +741,153 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
+                 <div class="item">
+                  <header>
+                    <h2>AI Chat</h2>
+                    <span>90%</span>
+                  </header>
+                  <div class="progress md-progress">
+                    <div
+                      class="progress-bar progress-bar-striped"
+                      role="progressbar"
+                      style="width: 90%"
+                      aria-valuenow="90"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                 <div class="item">
+                  <header>
+                    <h2>Machin Learning</h2>
+                    <span>70%</span>
+                  </header>
+                  <div class="progress md-progress">
+                    <div
+                      class="progress-bar progress-bar-striped"
+                      role="progressbar"
+                      style="width: 70%"
+                      aria-valuenow="70"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                 <div class="item">
+                  <header>
+                    <h2 style="color: #f48024;">Devops</h2>
+                    <span>50%</span>
+                  </header>
+                  <div class="progress md-progress">
+                    <div
+                      class="progress-bar progress-bar-striped"
+                      role="progressbar"
+                      style="width: 50%"
+                      aria-valuenow="50"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                 <div class="item">
+                  <header>
+                    <h2>Teach Lead</h2>
+                    <span>85%</span>
+                  </header>
+                  <div class="progress md-progress">
+                    <div
+                      class="progress-bar progress-bar-striped"
+                      role="progressbar"
+                      style="width: 85%"
+                      aria-valuenow="85"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                 <div class="item">
+                  <header>
+                    <h2 style="color: #f48024;">Unit Test</h2>
+                    <span>80%</span>
+                  </header>
+                  <div class="progress md-progress">
+                    <div
+                      class="progress-bar progress-bar-striped"
+                      role="progressbar"
+                      style="width: 80%"
+                      aria-valuenow="80"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                 <div class="item">
+                  <header>
+                    <h2>SEO</h2>
+                    <span>60%</span>
+                  </header>
+                  <div class="progress md-progress">
+                    <div
+                      class="progress-bar progress-bar-striped"
+                      role="progressbar"
+                      style="width: 60%"
+                      aria-valuenow="60"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                 <div class="item">
+                  <header>
+                    <h2>git</h2>
+                    <span>70%</span>
+                  </header>
+                  <div class="progress md-progress">
+                    <div
+                      class="progress-bar progress-bar-striped"
+                      role="progressbar"
+                      style="width: 70%"
+                      aria-valuenow="70"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
+                  <div class="item">
+                  <header>
+                    <h2>Figma</h2>
+                    <span>70%</span>
+                  </header>
+                  <div class="progress md-progress">
+                    <div
+                      class="progress-bar progress-bar-striped"
+                      role="progressbar"
+                      style="width: 70%"
+                      aria-valuenow="70"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <!-- item -->
+                <!-- item -->
               </div>
             </section>
-
+<!-- =========================================================================================================================== -->
             <!-- /my skills -->
             <!-- my certificate -->
             <section class="my-certificates box-shadow">
@@ -930,9 +1092,9 @@
                   <a
                     href="images/certificate/image.png"
                     data-lightbox="certificates"
-                    data-title="Do some practice as python example"
+                    data-title="some practice as python example"
                   >
-                    <h2>Do some practice as python example</h2>
+                    <h2>some practice as python example</h2>
                     <span><i class="icon-zoom-plus"></i></span>
                   </a>
                 </div>
@@ -942,9 +1104,9 @@
                   <a
                     href="images/certificate/image_2.jpeg"
                     data-lightbox="certificates"
-                    data-title="course python in different website"
+                    data-title="python in different website"
                   >
-                    <h2>course python in different website</h2>
+                    <h2>python in different website</h2>
                     <span><i class="icon-zoom-plus"></i></span>
                   </a>
                 </div>
@@ -966,9 +1128,9 @@
                   <a
                     href="images/certificate/image_3.jpg"
                     data-lightbox="certificates"
-                    data-title="course maked memory game with Python"
+                    data-title="memory game with Python"
                   >
-                    <h2>course maked memory game with Python</h2>
+                    <h2>memory game with Python</h2>
                     <span><i class="icon-zoom-plus"></i></span>
                   </a>
                 </div>
@@ -1214,7 +1376,7 @@
                 </div>
                 <!-- /item -->
                 <!-- /item -->
-                 <div class="item">
+                <div class="item">
                   <a
                     href="images/certificate/PyScript.jpg"
                     data-lightbox="certificates"
@@ -1228,9 +1390,9 @@
                 <!-- /item -->
               </div>
             </section>
-
+            <!-- ========================================================================================================================= -->
             <!-- Work Samples -->
-            <section class="my-certificates box-shadow">
+            <section id="work_sample" class="my-certificates box-shadow">
               <header class="heading">
                 <h2>نمونه کارهای من</h2>
               </header>
@@ -1717,7 +1879,7 @@
                 </div>
                 <!-- /item -->
                 <!-- /item -->
-                 <div class="item">
+                <div class="item">
                   <a
                     href="images/Work Samples/data-analyes.png"
                     data-lightbox="certificates"
@@ -1739,7 +1901,7 @@
                 </div>
                 <!-- /item -->
                 <!-- /item -->
-                 <div class="item">
+                <div class="item">
                   <a
                     href="images/Work Samples/make-sound.png"
                     data-lightbox="certificates"
@@ -1753,9 +1915,7 @@
                     <a
                       href="https://github.com/ErfanShokrollahzadeh/make-sounde-with-Html-Css-Javascript"
                     >
-                      <h2 class="padding-text-0">
-                        Xylophone app
-                      </h2>
+                      <h2 class="padding-text-0">Xylophone app</h2>
                     </a>
                   </a>
                 </div>
@@ -1777,7 +1937,7 @@
                   <li><i class="icon-mobile"></i> 093334920731</li>
                   <li><i class="icon-email"></i> erfan.shokr300@gmail.com</li>
                 </ul>
-                <form id="commentForm"  class="form-style">
+                <form id="commentForm" class="form-style">
                   <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
                       <input type="text" name="name" placeholder="نام " />
@@ -1786,10 +1946,15 @@
                       <input type="text" name="email" placeholder=" ایمیل " />
                     </div>
                     <div class="col-xs-12">
-                      <textarea name="message" placeholder=" متن پیغام "></textarea>
+                      <textarea
+                        name="message"
+                        placeholder=" متن پیغام "
+                      ></textarea>
                     </div>
                     <div class="col-md-4 col-sm-5 col-xs-12 pull-left">
-                      <button type="submit" class="button-st blue">ثبت پيغام</button>
+                      <button type="submit" class="button-st blue">
+                        ثبت پيغام
+                      </button>
                     </div>
                   </div>
                 </form>

@@ -31,7 +31,7 @@
 }
 
 body {
-  background-color: #dbdbdb;
+  background-color: #b7b7b7;
   margin: 0;
   padding: 0;
   font-family: "IRANSans", tahoma;
@@ -205,6 +205,7 @@ form button,
   position: absolute;
   right: 0;
   top: 0px;
+  border: 1px solid #dbdbdb;
 }
 
 .main-content .profile-layer .bg-layer {
@@ -576,7 +577,7 @@ form button,
 }
 
 .my-certificates .inner .item a {
-  border: 2px solid #ededf1;
+  border: 2px solid #7676db;
   display: block;
   border-radius: 4px;
   -moz-border-radius: 4px;
@@ -586,7 +587,7 @@ form button,
 }
 
 .my-certificates .inner .item a span {
-  border-left: 1px solid #ededf1;
+  border-left: 1px solid #7676db;
   display: inline-table;
   width: 55px;
   line-height: 50px;
@@ -622,6 +623,7 @@ form button,
 
 .my-certificates .inner .item a:hover h2 {
   color: #3893e7;
+  text-shadow: 1px 1px 5px lightgreen;
 }
 
 .resume-tab .about-me {
@@ -1054,7 +1056,7 @@ footer p a {
     display: flex;
     margin: 0 500px -25px 64px;
     padding-top: 5px;
-    text-shadow: 2px 2px #7eff1e;
+    text-shadow: 2px 2px 5px #7eff1e;
   }
 }
 
@@ -1239,8 +1241,8 @@ footer p a {
   float: left !important;
 }
 .work-sample-image {
-  width: 350px;
-  height: 170px;
+  width: 100%;
+  height: 100%;
 }
 
 .netfoundation-logo {
