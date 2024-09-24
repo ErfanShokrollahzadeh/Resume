@@ -223,6 +223,7 @@ form button,
   position: absolute;
   right: 0;
   top: 10px;
+  border: 1px solid #dadada;
 }
 
 .main-content .profile-layer .bg-layer {
@@ -454,7 +455,7 @@ form button,
 }
 
 .tab-content-layer {
-  padding: 40px 0 10px;
+  padding: 55px 0 10px;
 }
 
 .tab-content-layer > div {
@@ -631,6 +632,10 @@ form button,
   padding-right: 55px;
   color: #646777;
   font-size: 15px;
+}
+.my-certificates .inner .item a h2:hover {
+  text-shadow: 1px 1px 5px #7eff1e;
+  cursor: pointer;
 }
 
 .my-certificates .inner .item a:hover span i {
