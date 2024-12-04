@@ -456,6 +456,7 @@ form button,
 
 .tab-content-layer {
   padding: 55px 0 10px;
+  margin-top: 55px;
 }
 
 .tab-content-layer > div {
