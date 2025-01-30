@@ -206,6 +206,14 @@ form button,
   right: 0;
   top: 0px;
   border: 1px solid #dbdbdb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.main-content .profile-layer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .main-content .profile-layer .bg-layer {
@@ -247,6 +255,7 @@ form button,
   margin: -40px auto 0;
   position: relative;
   z-index: 4;
+  animation: pulse 2s ease infinite;
 }
 
 .main-content .profile-layer .img-layer img {
@@ -298,10 +307,13 @@ form button,
   float: right;
   margin: 0 8px;
   position: relative;
+  transform: translateY(0);
+  transition: all 0.3s ease;
 }
 
 .main-content .profile-layer .content .socials a:hover {
-  color: #338ee2;
+  transform: translateY(-5px);
+  filter: brightness(1.2);
 }
 
 .tabs-item {
@@ -477,10 +489,37 @@ form button,
   margin-bottom: 0;
   background-color: #f3f3f8;
   border-radius: 20px;
+  background: #f0f0f0;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .progress-bar {
   background-color: #3893e7;
+  position: relative;
+  background: linear-gradient(45deg, #338ee2, #42ba5c);
+  background-size: 200% 200%;
+  animation: gradientBg 3s ease infinite;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%
+  );
+  background-size: 20px 20px;
+  animation: moveStripes 1s linear infinite;
 }
 
 .resume-tab .inner {
@@ -769,6 +808,9 @@ footer p a {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   margin-bottom: 15px;
+  border: 2px solid #eaedf3;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .form-style select {
@@ -794,11 +836,16 @@ footer p a {
   -webkit-border-radius: 4px;
   margin-bottom: 15px;
   resize: none;
+  border: 2px solid #eaedf3;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .form-style input:focus,
 .form-style textarea:focus {
   border: 1px solid #bcc2d2;
+  border-color: #338ee2;
+  box-shadow: 0 0 0 3px rgba(51, 142, 226, 0.2);
 }
 
 .form-style .button-st {
@@ -1031,11 +1078,17 @@ footer p a {
 
 .button-st.blue {
   background-color: #3893e7;
+  background: linear-gradient(45deg, #338ee2, #42ba5c);
+  background-size: 200% 200%;
+  animation: gradientBg 3s ease infinite;
+  transition: transform 0.3s ease;
 }
 
 .button-st.blue:hover {
   background-color: #126dc1;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(51, 142, 226, 0.3);
 }
 
 .padding-text-0 {
@@ -1251,4 +1304,58 @@ footer p a {
 
 .mx-height {
   max-height: 250px !important;
+}
+
+/* Add modern animations */
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes gradientBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes moveStripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}
+
+/* Update existing profile styles */
+.gradient-text {
+  background: linear-gradient(45deg, #338ee2, #42ba5c);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientBg 3s ease infinite;
 }
