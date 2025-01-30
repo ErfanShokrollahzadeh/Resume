@@ -255,7 +255,7 @@ form button,
   margin: -40px auto 0;
   position: relative;
   z-index: 4;
-  animation: pulse 2s ease infinite;
+  animation: pulse 2.8s ease infinite;
 }
 
 .main-content .profile-layer .img-layer img {
