@@ -139,11 +139,16 @@
         <div class="top-content">
           <!-- profile -->
           <div class="profile-layer box-shadow">
-            <div class="bg-layer"><img src="images/white.svg" /></div>
-            <div class="img-layer"><img src="images/avator3.JPG" /></div>
+            <div class="bg-layer">
+              <div class="gradient-overlay"></div>
+              <img src="images/white.svg" />
+            </div>
+            <div class="img-layer pulse-animation">
+              <img src="images/avator3.JPG" />
+            </div>
             <section class="content">
-              <h1>Erfan Shokrollahzadeh</h1>
-              <h2>Software Engineer</h2>
+              <h1 class="gradient-text">Erfan Shokrollahzadeh</h1>
+              <h2 class="typing-animation">Software Engineer</h2>
               <h2>Web & Mobile Developer</h2>
               <h2>Full Stack python(Django) Engineer</h2>
               <h2>Developer , Grapic Designer , Teacher</h2>
@@ -164,7 +169,7 @@
                 />
               </a>
 
-              <div class="socials">
+              <div class="socials animated-socials">
                 <a href="https://t.me/ERFANsorena80"
                   ><i class="fa fa-telegram" style="color: #229ed9"></i
                 ></a>
@@ -242,54 +247,58 @@
           <!-- /profile -->
 
           <!-- about -->
-          <section class="about-layer box-shadow">
+          <section class="about-layer box-shadow reveal-section">
             <header>
-              <h2>About Me</h2>
+              <h2 class="section-title">About Me</h2>
             </header>
-            <p>
-              💻 Hello, I'm Erfan Shokrollahzadeh, and I'm a full-stack software
-              Engineer with a passion for empowering projects using Python and
-              Django technology. Over the years, I've developed a deep
-              understanding of both front-end and back-end development, allowing
-              me to take on projects.From 2017 got to know the computer and
-              introduced the programming from 2019 and until I love this lovely
-              career right now.
-            </p>
-            <p>
-              🎉 I was born in 2001 in Tehran; My work in the field of
-              programming and IT I started in 2019 and from 2021 professionally
-              entered this field I became, now, after 2 years after the
-              experience and techniques of programming and E -marketing is ready
-              to be able to make big projects and To implement great ideas.
-            </p>
-            <p>
-              💫 But what truly sets me apart is my ability to learn. So much so
-              that if I want a new skill, I'll start. I repeat that skill from
-              the beginning to the end.
-            </p>
-            <p>
-              📜 I'm a computer science student from Iran and I'm willing to
-              learn Python. My journey to Python started four months ago when I
-              was searching for web develope. At the moment, I am self-taught.
-            </p>
-            <p>
-              📑 Throughout my life, I have had the opportunity to raise my
-              level by collaborating and seeking help from people more
-              experienced than myself. I have always been interested in.
-            </p>
-            <h3>Some of my important projects:</h3>
-            <p>
-              Yuo can see my projects in
-              <a href="#work_sample" style="color: rgb(44, 44, 255)"
-                >🔗Work sample section</a
-              >
-              <style>
-                a[href="#work_sample"]:hover {
-                  font-size: 18px;
-                  text-shadow: 3px 3px 6px green;
-                }
-              </style>
-            </p>
+            <div class="about-content">
+              <p>
+                💻 Hello, I'm Erfan Shokrollahzadeh, and I'm a full-stack
+                software Engineer with a passion for empowering projects using
+                Python and Django technology. Over the years, I've developed a
+                deep understanding of both front-end and back-end development,
+                allowing me to take on projects.From 2017 got to know the
+                computer and introduced the programming from 2019 and until I
+                love this lovely career right now.
+              </p>
+              <p>
+                🎉 I was born in 2001 in Tehran; My work in the field of
+                programming and IT I started in 2019 and from 2021
+                professionally entered this field I became, now, after 2 years
+                after the experience and techniques of programming and
+                E -marketing is ready to be able to make big projects and To
+                implement great ideas.
+              </p>
+              <p>
+                💫 But what truly sets me apart is my ability to learn. So much
+                so that if I want a new skill, I'll start. I repeat that skill
+                from the beginning to the end.
+              </p>
+              <p>
+                📜 I'm a computer science student from Iran and I'm willing to
+                learn Python. My journey to Python started four months ago when
+                I was searching for web develope. At the moment, I am
+                self-taught.
+              </p>
+              <p>
+                📑 Throughout my life, I have had the opportunity to raise my
+                level by collaborating and seeking help from people more
+                experienced than myself. I have always been interested in.
+              </p>
+              <h3>Some of my important projects:</h3>
+              <p>
+                Yuo can see my projects in
+                <a href="#work_sample" style="color: rgb(44, 44, 255)"
+                  >🔗Work sample section</a
+                >
+                <style>
+                  a[href="#work_sample"]:hover {
+                    font-size: 18px;
+                    text-shadow: 3px 3px 6px green;
+                  }
+                </style>
+              </p>
+            </div>
           </section>
           <!-- /about -->
         </div>
@@ -304,9 +313,9 @@
               <header class="heading">
                 <h2>My Skills</h2>
               </header>
-              <div class="inner">
+              <div class="inner skills-grid">
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="40">
                   <header>
                     <h2>C#</h2>
                     <span>40%</span>
@@ -324,7 +333,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="40">
                   <header>
                     <h2>Type Script</h2>
                     <span>40%</span>
@@ -342,7 +351,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="50">
                   <header>
                     <h2>Windows Forms</h2>
                     <span>50%</span>
@@ -360,7 +369,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="90">
                   <header>
                     <h2>Sql Server 2019</h2>
                     <span>90%</span>
@@ -378,7 +387,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="95">
                   <header>
                     <h2>Web Design</h2>
                     <span>95%</span>
@@ -396,7 +405,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="80">
                   <header>
                     <h2>JavaScript</h2>
                     <span>80%</span>
@@ -414,7 +423,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="95">
                   <header>
                     <h2>Html 5</h2>
                     <span>95%</span>
@@ -432,7 +441,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="95">
                   <header>
                     <h2>Css3</h2>
                     <span>95%</span>
@@ -450,7 +459,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="90">
                   <header>
                     <h2 style="color: #f48024">Python</h2>
                     <span>90%</span>
@@ -468,7 +477,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="95">
                   <header>
                     <h2 style="color: #f48024">GitHub</h2>
                     <span>95%</span>
@@ -486,7 +495,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="80">
                   <header>
                     <h2>Adobe Photoshop</h2>
                     <span>80%</span>
@@ -504,7 +513,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="70">
                   <header>
                     <h2>Adobe Illustrator</h2>
                     <span>70%</span>
@@ -522,7 +531,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="20">
                   <header>
                     <h2>TailwindCss</h2>
                     <span>20%</span>
@@ -540,7 +549,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="90">
                   <header>
                     <h2>Adobe XD</h2>
                     <span>90%</span>
@@ -558,7 +567,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="90">
                   <header>
                     <h2 style="color: #f48024">Django</h2>
                     <span>90%</span>
@@ -576,7 +585,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="90">
                   <header>
                     <h2>Flex Box</h2>
                     <span>90%</span>
@@ -594,7 +603,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="85">
                   <header>
                     <h2>Sass</h2>
                     <span>85%</span>
@@ -612,7 +621,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="90">
                   <header>
                     <h2>Bootstrap</h2>
                     <span>90%</span>
@@ -630,7 +639,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="70">
                   <header>
                     <h2 style="color: #f48024">Vue Js</h2>
                     <span>70%</span>
@@ -648,7 +657,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="50">
                   <header>
                     <h2>Wordpress</h2>
                     <span>50%</span>
@@ -666,7 +675,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="90">
                   <header>
                     <h2 style="color: #f48024">Django Rest Framwork</h2>
                     <span>90%</span>
@@ -684,7 +693,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="70">
                   <header>
                     <h2 style="color: #f48024">Docker</h2>
                     <span>70%</span>
@@ -702,7 +711,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="50">
                   <header>
                     <h2 style="color: #f48024">PyScript</h2>
                     <span>50%</span>
@@ -720,7 +729,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="90">
                   <header>
                     <h2>AI Chat</h2>
                     <span>90%</span>
@@ -738,7 +747,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="70">
                   <header>
                     <h2>Machin Learning</h2>
                     <span>70%</span>
@@ -756,7 +765,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="50">
                   <header>
                     <h2 style="color: #f48024">Devops</h2>
                     <span>50%</span>
@@ -774,7 +783,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="85">
                   <header>
                     <h2>Teach Lead</h2>
                     <span>85%</span>
@@ -792,7 +801,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="80">
                   <header>
                     <h2 style="color: #f48024">Unit Test</h2>
                     <span>80%</span>
@@ -810,7 +819,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="60">
                   <header>
                     <h2>SEO</h2>
                     <span>60%</span>
@@ -828,7 +837,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="70">
                   <header>
                     <h2>git</h2>
                     <span>70%</span>
@@ -846,7 +855,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                <div class="item">
+                <div class="item skill-item" data-skill="70">
                   <header>
                     <h2>Figma</h2>
                     <span>70%</span>
@@ -864,7 +873,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                 <div class="item">
+                <div class="item skill-item" data-skill="50">
                   <header>
                     <h2 style="color: #f48024">GO(GoLand)</h2>
                     <span>50%</span>
@@ -882,7 +891,7 @@
                 </div>
                 <!-- item -->
                 <!-- item -->
-                 <div class="item">
+                <div class="item skill-item" data-skill="50">
                   <header>
                     <h2 style="color: #f48024">Prompt For Generative AI</h2>
                     <span>50%</span>
@@ -1446,7 +1455,7 @@
                 </div>
                 <!-- /item -->
                 <!-- /item -->
-                 <div class="item">
+                <div class="item">
                   <a
                     href="images/certificate/certificate-linkedin-fandamental_2323.png"
                     data-lightbox="certificates"
@@ -1458,7 +1467,7 @@
                 </div>
                 <!-- /item -->
                 <!-- /item -->
-                 <div class="item">
+                <div class="item">
                   <a
                     href="images/certificate/CertificateOfCompletion_Career Essentials in Generative AI by Microsoft and LinkedIn2.png"
                     data-lightbox="certificates"
@@ -1470,7 +1479,7 @@
                 </div>
                 <!-- /item -->
                 <!-- /item -->
-                 <div class="item">
+                <div class="item">
                   <a
                     href="images/certificate/Introduction to Programming with Python.png"
                     data-lightbox="certificates"
