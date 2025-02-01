@@ -1359,3 +1359,29 @@ footer p a {
   -webkit-text-fill-color: transparent;
   animation: gradientBg 3s ease infinite;
 }
+
+/* Work Samples Grid Layout */
+.my-certificates .inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.my-certificates .inner .item {
+  padding: 0;
+  width: 100%;
+}
+
+/* Make grid responsive */
+@media screen and (max-width: 992px) {
+  .my-certificates .inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .my-certificates .inner {
+    grid-template-columns: 1fr;
+  }
+}
