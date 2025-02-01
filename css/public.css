@@ -38,6 +38,22 @@ body {
   color: #30313e;
   font-size: 14px;
   word-spacing: -1px;
+  background: linear-gradient(-45deg,rgb(214, 39, 249),rgb(240, 101, 59),rgb(237, 42, 117),rgb(64, 194, 241),rgb(8, 203, 157),rgb(213, 248, 124),rgb(237, 42, 117),rgb(240, 101, 59),rgb(115, 115, 115));
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
 }
 
 .translate {
