@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <title>عرفان شکرالله زاده - Full-Stack Python Developer Portfolio</title>
+
+    <!-- Meta Data -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="author" content="عرفان شکرالله زاده" />
+    <meta
+      name="description"
+      content="Full-Stack Python Developer - Django, REST API, Web Development Expert"
+    />
+
+    <!-- Twitter data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@erfan_shokr" />
+    <meta
+      name="twitter:title"
+      content="عرفان شکرالله زاده - Full-Stack Python Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Professional Python Developer specializing in Django, REST APIs, and modern web development"
+    />
+    <meta name="twitter:image" content="assets/images/social.html" />
+
+    <!-- Open Graph data -->
+    <meta
+      property="og:title"
+      content="عرفان شکرالله زاده - Full-Stack Python Developer"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="your url website" />
+    <meta property="og:image" content="assets/images/social.html" />
+    <meta
+      property="og:description"
+      content="Professional Python Developer Portfolio - Django, REST API, Web Development"
+    />
+    <meta property="og:site_name" content="عرفان شکرالله زاده Portfolio" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicons/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Styles -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/styles/style-rtl-demo.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/styles/style-rtl.css" />
+    <link rel="stylesheet" type="text/css" href="assets/demo/style-demo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <!-- Mapbox-->
+    <script src="assets/js/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="assets/styles/mapbox-gl.css" />
+
+    <style>
+      /* Modern One-Page Portfolio Styles */
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .header-image {
+        position: relative;
+        height: 500px;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .header-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        padding: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .hero-cta {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        text-decoration: none;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .cta-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        color: white;
+        text-decoration: none;
+      }
+
+      .main {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .box {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      .header.box {
+        margin-top: -150px;
+        position: relative;
+        z-index: 3;
+      }
+
+      .tabcontent {
+        padding: 2rem;
+      }
+
+      .title--h1 {
+        color: #333;
+        position: relative;
+        padding-bottom: 1rem;
+      }
+
+      .title__separate::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 2px;
+      }
+
+      .case-item {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e6ed;
+        transition: all 0.3s ease;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .case-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .case-item__icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 15px;
+        padding: 15px;
+        filter: brightness(0) invert(1);
+      }
+
+      .case-item h3 {
+        color: #667eea;
+        margin-bottom: 0.5rem;
+      }
+
+      .case-item__caption {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .review-item {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e6ed;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .review-item__textbox h4 {
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .review-item__caption {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .timeline__item {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-left: 4px solid #667eea;
+        transition: all 0.3s ease;
+      }
+
+      .timeline__item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .timeline__title {
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline__period {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .timeline__description {
+        color: #666;
+        line-height: 1.6;
+        margin-top: 1rem;
+      }
+
+      .progress {
+        margin-bottom: 2rem;
+      }
+
+      .progress-bar {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 10px;
+        height: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .progress-bar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        animation: shimmer 2s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      .gallery-grid__item {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 2rem;
+      }
+
+      .gallery-grid__item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .gallery-grid__caption {
+        padding: 1.5rem;
+      }
+
+      .gallery-grid__title {
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .gallery-grid__category {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .news-item {
+        transition: all 0.3s ease;
+      }
+
+      .news-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .news-item__date {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1rem;
+        border-radius: 10px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .contact-form {
+        background: white;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .progress-item {
+        margin: 20px 0;
+      }
+
+      .progress-item__title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #333;
+      }
+
+      .progress-item__progressbar {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .progress-item__progressbar-fill {
+        height: 100%;
+        border-radius: 10px;
+        transition: width 1.5s ease-in-out;
+      }
+
+      .progress-item__percent {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #667eea;
+        margin-top: 5px;
+        text-align: right;
+      }
+
+      .contact-block {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .contact-block:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .contact-block__title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: #667eea;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .contact-block__title i {
+        font-size: 1.2rem;
+      }
+
+      .contact-block p {
+        margin: 0;
+        color: #666;
+      }
+
+      .contact-block a {
+        color: #667eea;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-block a:hover {
+        color: #764ba2;
+        text-decoration: none;
+      }
+
+      .map-container {
+        margin: 2rem 0;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-control {
+        border: 2px solid #e0e6ed;
+        border-radius: 15px;
+        padding: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .btn-submit {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .nav__item a {
+        transition: all 0.3s ease;
+        border-radius: 10px;
+      }
+
+      .nav__item a.active,
+      .nav__item a:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .case-item {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader__wrap">
+        <div class="circle-pulse">
+          <div class="circle-pulse__1"></div>
+          <div class="circle-pulse__2"></div>
+        </div>
+        <div class="preloader__progress"><span></span></div>
+      </div>
+    </div>
+
+    <main class="main">
+      <!-- Header Image -->
+      <div class="header-image">
+        <div
+          class="js-parallax"
+          style="background-image: url(assets/img/blog1.png)"
+        ></div>
+        <div class="hero-content">
+          <h1><i class="fab fa-python"></i> عرفان شکرالله زاده</h1>
+          <p class="hero-subtitle">
+            Full-Stack Python Developer | Django Expert | API Specialist
+          </p>
+          <div class="hero-cta">
+            <a href="#about-tab" class="cta-btn js-tabs"
+              ><i class="fas fa-user"></i> درباره من</a
+            >
+            <a href="#works-tab" class="cta-btn js-tabs"
+              ><i class="fas fa-code"></i> نمونه کارها</a
+            >
+            <a href="#contact-tab" class="cta-btn js-tabs"
+              ><i class="fas fa-envelope"></i> تماس با من</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="container gutter-top">
+        <!-- Header -->
+        <header class="header box">
+          <div class="header__left">
+            <div class="header__photo">
+              <img
+                class="header__photo-img"
+                src="assets/img/avator3.JPG"
+                alt="عرفان شکرالله زاده"
+              />
+            </div>
+            <div class="header__base-info">
+              <h4 class="title titl--h4">عرفان شکرالله زاده</h4>
+              <div class="status">Full-Stack Software Developer (Python)</div>
+              <ul class="header__social">
+                <li>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100082935861062"
+                    ><i class="font-icon icon-facebook1" style="color: blue"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/erfan_shokr"
+                    ><i class="font-icon icon-twitter1" style="color: black"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/erfan_shokrollahzadeh"
+                    ><i class="font-icon icon-instagram1" style="color: red"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/erfan-shokrollahzadeh-babb95216/"
+                    ><i
+                      class="font-icon icon-linkedin1"
+                      style="color: #0077b5"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://t.me/ERFANsorena80"
+                    ><i
+                      class="bi bi-telegram"
+                      style="color: #0088cc; font-size: 1.2em"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://github.com/ErfanShokrollahzadeh"
+                    ><i class="font-icon icon-github" style="color: #24292e"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://stackoverflow.com/users/18267139/erfan-shokrollahzadeh?tab=profile"
+                    ><i
+                      class="bi bi-stack-overflow"
+                      style="color: #f48024; font-size: 20px"
+                    ></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="header__right">
+            <ul class="header__contact">
+              <li>
+                <span class="overhead">ایمیل</span>erfan.shokr300@gmail.com
+              </li>
+              <li><span class="overhead">تلفن</span>9334920731 (۹۸+) 🇮🇷</li>
+              <li><span class="overhead">تلفن</span>4243 246 505 (90+) 🇹🇷</li>
+              <li><span class="overhead">تلفن</span>99935703 (374+) 🇦🇲</li>
+            </ul>
+            <ul class="header__contact">
+              <li><span class="overhead">تولد</span>28 شهریور 1380</li>
+              <li><span class="overhead">مکان تولد</span>تهران، ایران</li>
+            </ul>
+          </div>
+        </header>
+
+        <div class="row sticky-parent">
+          <!-- Sidebar nav -->
+          <aside class="col-12 col-md-12 col-lg-2">
+            <div class="sidebar box sticky-column">
+              <ul class="nav js-tabs">
+                <li class="nav__item">
+                  <a class="active" href="#about-tab"
+                    ><i class="icon-user"></i>درباره من</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a href="#resume-tab"><i class="icon-file-text"></i>رزومه</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#works-tab"
+                    ><i class="icon-codesandbox"></i>نمونه کارها</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a href="#blog-tab"><i class="icon-book-open"></i>وبلاگ</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#contact-tab"><i class="icon-book"></i>تماس با من</a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Content -->
+          <div class="col-12 col-md-12 col-lg-10">
+            <div class="box box-content" id="content">
+              <div class="content">
+                <!-- ABOUT -->
+                <div id="about-tab" class="tabcontent active">
+                  <div class="pb-0 pb-sm-2">
+                    <h1 class="title title--h1 first-title title__separate">
+                      درباره من
+                    </h1>
+                    <p>
+                      سلام! من عرفان شکرالله زاده هستم، یک توسعه‌دهنده
+                      Full-Stack Python با تخصص در Django Framework. بیش از 3
+                      سال تجربه در طراحی و توسعه اپلیکیشن‌های وب مدرن، API های
+                      RESTful و سیستم‌های پیچیده Backend دارم.
+                    </p>
+                    <p>
+                      تخصص اصلی من در زمینه Python/Django، طراحی API، کار با
+                      پایگاه‌های داده، و توسعه Frontend با تکنولوژی‌های مدرن
+                      است. علاقه‌مند به یادگیری تکنولوژی‌های جدید و حل مسائل
+                      چالش‌برانگیز در دنیای برنامه‌نویسی هستم.
+                    </p>
+                  </div>
+
+                  <!-- What -->
+                  <div class="mt-1">
+                    <h2 class="title title--h3">خدماتی که ارائه می‌دهم</h2>
+                    <div class="row">
+                      <!-- Case Item -->
+                      <div class="col-12 col-lg-6">
+                        <div class="case-item">
+                          <i
+                            class="fas fa-server case-item__icon"
+                            style="
+                              font-size: 2rem;
+                              color: white;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                              padding: 15px;
+                              border-radius: 15px;
+                              width: 60px;
+                              height: 60px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            "
+                          ></i>
+                          <div>
+                            <h3 class="title title--h4">Backend Development</h3>
+                            <p class="case-item__caption">
+                              طراحی و توسعه سیستم‌های Backend قدرتمند با Django،
+                              REST API، و پایگاه‌های داده مختلف
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Case Item -->
+                      <div class="col-12 col-lg-6">
+                        <div class="case-item">
+                          <i
+                            class="fas fa-code case-item__icon"
+                            style="
+                              font-size: 2rem;
+                              color: white;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                              padding: 15px;
+                              border-radius: 15px;
+                              width: 60px;
+                              height: 60px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            "
+                          ></i>
+                          <div>
+                            <h3 class="title title--h4">
+                              Full-Stack Development
+                            </h3>
+                            <p class="case-item__caption">
+                              توسعه کامل اپلیکیشن‌های وب از Frontend تا Backend
+                              با استفاده از تکنولوژی‌های مدرن
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Case Item -->
+                      <div class="col-12 col-lg-6">
+                        <div class="case-item">
+                          <i
+                            class="fas fa-plug case-item__icon"
+                            style="
+                              font-size: 2rem;
+                              color: white;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                              padding: 15px;
+                              border-radius: 15px;
+                              width: 60px;
+                              height: 60px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            "
+                          ></i>
+                          <div>
+                            <h3 class="title title--h4">API Development</h3>
+                            <p class="case-item__caption">
+                              طراحی و پیاده‌سازی API های RESTful با Django REST
+                              Framework، احراز هویت و مستندسازی کامل
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Case Item -->
+                      <div class="col-12 col-lg-6">
+                        <div class="case-item">
+                          <i
+                            class="fas fa-database case-item__icon"
+                            style="
+                              font-size: 2rem;
+                              color: white;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                              padding: 15px;
+                              border-radius: 15px;
+                              width: 60px;
+                              height: 60px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            "
+                          ></i>
+                          <div>
+                            <h3 class="title title--h4">Database Design</h3>
+                            <p class="case-item__caption">
+                              طراحی و بهینه‌سازی پایگاه‌های داده، کار با
+                              PostgreSQL، MySQL و بهینه‌سازی Query ها
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Testimonials -->
+                  <div class="mt-2">
+                    <h2 class="title title--h3">نظرات مشتریان</h2>
+                    <div class="swiper-container js-carousel-review">
+                      <div class="swiper-wrapper">
+                        <!-- Item review -->
+                        <div class="swiper-slide review-item">
+                          <svg class="avatar avatar--80" viewBox="0 0 84 84">
+                            <g class="avatar__hexagon">
+                              <image
+                                xlink:href="assets/img/avatar-2.jpg"
+                                height="100%"
+                                width="100%"
+                              />
+                            </g>
+                          </svg>
+                          <div class="review-item__textbox">
+                            <h4 class="title title--h5">محمد رضایی</h4>
+                            <p class="review-item__caption">
+                              عرفان یک توسعه‌دهنده Django بسیار ماهر است. پروژه
+                              فروشگاه آنلاین ما را با کیفیت عالی و در زمان مقرر
+                              تحویل داد.
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- Item review -->
+                        <div class="swiper-slide review-item">
+                          <svg class="avatar avatar--80" viewBox="0 0 84 84">
+                            <g class="avatar__hexagon">
+                              <image
+                                xlink:href="assets/img/avatar-3.jpg"
+                                height="100%"
+                                width="100%"
+                              />
+                            </g>
+                          </svg>
+                          <div class="review-item__textbox">
+                            <h4 class="title title--h5">سارا احمدی</h4>
+                            <p class="review-item__caption">
+                              API های طراحی شده توسط عرفان فوق‌العاده هستند.
+                              مستندسازی کامل و پرفورمنس بالا. حتما دوباره باهاش
+                              کار خواهیم کرد.
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- Item review -->
+                        <div class="swiper-slide review-item">
+                          <svg class="avatar avatar--80" viewBox="0 0 84 84">
+                            <g class="avatar__hexagon">
+                              <image
+                                xlink:href="assets/img/avatar-4.jpg"
+                                height="100%"
+                                width="100%"
+                              />
+                            </g>
+                          </svg>
+                          <div class="review-item__textbox">
+                            <h4 class="title title--h5">علی موسوی</h4>
+                            <p class="review-item__caption">
+                              سیستم مدیریت محتوای ما را با Django طراحی کرد. کد
+                              تمیز، قابل نگهداری و کاملاً حرفه‌ای. توصیه می‌کنم.
+                            </p>
+                          </div>
+                        </div>
+
+                        <!-- Item review -->
+                        <div class="swiper-slide review-item">
+                          <svg class="avatar avatar--80" viewBox="0 0 84 84">
+                            <g class="avatar__hexagon">
+                              <image
+                                xlink:href="assets/img/avatar-5.jpg"
+                                height="100%"
+                                width="100%"
+                              />
+                            </g>
+                          </svg>
+                          <div class="review-item__textbox">
+                            <h4 class="title title--h5">فاطمه کریمی</h4>
+                            <p class="review-item__caption">
+                              پروژه وب اپلیکیشن ما را از صفر با Django شروع کرد
+                              و به بهترین شکل تمام کرد. مهارت فنی بالا و تعامل
+                              عالی.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="swiper-pagination"></div>
+                    </div>
+                  </div>
+
+                  <!-- Skills -->
+                  <div class="mt-4">
+                    <h2 class="title title--h3">مهارت‌های فنی</h2>
+
+                    <div class="progress-item">
+                      <div class="progress-item__title">Python/Django</div>
+                      <div class="progress-item__progressbar">
+                        <div
+                          class="progress-item__progressbar-fill"
+                          style="
+                            width: 90%;
+                            background: linear-gradient(
+                              135deg,
+                              #667eea 0%,
+                              #764ba2 100%
+                            );
+                          "
+                        ></div>
+                      </div>
+                      <div class="progress-item__percent">90%</div>
+                    </div>
+
+                    <div class="progress-item">
+                      <div class="progress-item__title">
+                        REST API Development
+                      </div>
+                      <div class="progress-item__progressbar">
+                        <div
+                          class="progress-item__progressbar-fill"
+                          style="
+                            width: 85%;
+                            background: linear-gradient(
+                              135deg,
+                              #667eea 0%,
+                              #764ba2 100%
+                            );
+                          "
+                        ></div>
+                      </div>
+                      <div class="progress-item__percent">85%</div>
+                    </div>
+
+                    <div class="progress-item">
+                      <div class="progress-item__title">PostgreSQL/MySQL</div>
+                      <div class="progress-item__progressbar">
+                        <div
+                          class="progress-item__progressbar-fill"
+                          style="
+                            width: 80%;
+                            background: linear-gradient(
+                              135deg,
+                              #667eea 0%,
+                              #764ba2 100%
+                            );
+                          "
+                        ></div>
+                      </div>
+                      <div class="progress-item__percent">80%</div>
+                    </div>
+
+                    <div class="progress-item">
+                      <div class="progress-item__title">
+                        JavaScript/HTML/CSS
+                      </div>
+                      <div class="progress-item__progressbar">
+                        <div
+                          class="progress-item__progressbar-fill"
+                          style="
+                            width: 75%;
+                            background: linear-gradient(
+                              135deg,
+                              #667eea 0%,
+                              #764ba2 100%
+                            );
+                          "
+                        ></div>
+                      </div>
+                      <div class="progress-item__percent">75%</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RESUME -->
+                <div id="resume-tab" class="tabcontent">
+                  <div class="pb-2">
+                    <h1 class="title title--h1 first-title title__separate">
+                      رزومه
+                    </h1>
+                  </div>
+
+                  <!-- Experience -->
+                  <div class="row">
+                    <div class="col-12">
+                      <h2 class="title title--h3">
+                        <img
+                          class="title-icon"
+                          src="assets/icons/icon-experience.svg"
+                          alt=""
+                        />
+                        تجربه کاری
+                      </h2>
+                      <div class="timeline">
+                        <!-- Item -->
+                        <article class="timeline__item">
+                          <h5 class="title title--h5 timeline__title">
+                            Full-Stack Python Developer
+                          </h5>
+                          <span class="timeline__period">2021 - اکنون</span>
+                          <p class="timeline__description">
+                            طراحی و توسعه اپلیکیشن‌های وب پیشرفته با Django
+                            Framework، پیاده‌سازی REST API ها، کار با پایگاه‌های
+                            داده مختلف و توسعه Frontend با تکنولوژی‌های مدرن.
+                            تجربه کار در پروژه‌های مختلف از جمله سیستم‌های
+                            مدیریت محتوا، اپلیکیشن‌های تجارت الکترونیک و
+                            پلتفرم‌های آموزشی.
+                          </p>
+                        </article>
+
+                        <!-- Item -->
+                        <article class="timeline__item">
+                          <h5 class="title title--h5 timeline__title">
+                            Backend Developer
+                          </h5>
+                          <span class="timeline__period">2020 - 2021</span>
+                          <p class="timeline__description">
+                            توسعه سیستم‌های Backend با Python و Django، طراحی
+                            API های RESTful، کار با Celery برای پردازش
+                            Background Tasks، پیاده‌سازی سیستم‌های احراز هویت و
+                            Authorization، و بهینه‌سازی عملکرد پایگاه‌های داده.
+                          </p>
+                        </article>
+
+                        <!-- Item -->
+                        <article class="timeline__item">
+                          <h5 class="title title--h5 timeline__title">
+                            Junior Python Developer
+                          </h5>
+                          <span class="timeline__period">2019 - 2020</span>
+                          <p class="timeline__description">
+                            شروع کار حرفه‌ای با Python، یادگیری Django
+                            Framework، کار با HTML/CSS/JavaScript، توسعه
+                            اپلیکیشن‌های ساده وب، و کسب تجربه در کار تیمی و
+                            استفاده از Git و سیستم‌های Version Control.
+                          </p>
+                        </article>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <h2 class="title title--h3">
+                        <img
+                          class="title-icon"
+                          src="assets/icons/icon-education.svg"
+                          alt=""
+                        />
+                        تحصیلات و مدارک
+                      </h2>
+                      <div class="timeline">
+                        <!-- Item -->
+                        <article class="timeline__item">
+                          <h5 class="title title--h5 timeline__title">
+                            Google Data Analytics Certificate
+                          </h5>
+                          <span class="timeline__period">2023</span>
+                          <p class="timeline__description">
+                            دوره جامع تحلیل داده با Google، یادگیری ابزارهای
+                            تحلیل داده، Python برای Data Science، و مهارت‌های
+                            آماری پیشرفته.
+                          </p>
+                        </article>
+
+                        <!-- Item -->
+                        <article class="timeline__item">
+                          <h5 class="title title--h5 timeline__title">
+                            Python Programming - Coursera
+                          </h5>
+                          <span class="timeline__period">2022</span>
+                          <p class="timeline__description">
+                            تکمیل دوره‌های تخصصی Python Programming، یادگیری
+                            مفاهیم پیشرفته برنامه‌نویسی، الگوریتم‌ها و ساختار
+                            داده‌ها.
+                          </p>
+                        </article>
+
+                        <!-- Item -->
+                        <article class="timeline__item">
+                          <h5 class="title title--h5 timeline__title">
+                            کارشناسی مهندسی کامپیوتر
+                          </h5>
+                          <span class="timeline__period">2016 - 2020</span>
+                          <p class="timeline__description">
+                            تحصیل در رشته مهندسی کامپیوتر، یادگیری مبانی
+                            برنامه‌نویسی، ساختار داده‌ها، الگوریتم‌ها،
+                            پایگاه‌های داده و مهندسی نرم‌افزار.
+                          </p>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Skills -->
+                  <div class="row">
+                    <div class="col-12">
+                      <h2 class="title title--h3">مهارت‌های تکنیکی</h2>
+                      <div class="box box__border">
+                        <!-- Progress -->
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-valuenow="95"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            style="
+                              width: 95%;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                            "
+                          >
+                            <div class="progress-text">
+                              <span>Python & Django</span><span>95%</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-valuenow="90"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            style="
+                              width: 90%;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                            "
+                          >
+                            <div class="progress-text">
+                              <span>REST API Development</span><span>90%</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-valuenow="85"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            style="
+                              width: 85%;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                            "
+                          >
+                            <div class="progress-text">
+                              <span>PostgreSQL & MySQL</span><span>85%</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-valuenow="80"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            style="
+                              width: 80%;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                            "
+                          >
+                            <div class="progress-text">
+                              <span>Frontend (HTML/CSS/JS)</span
+                              ><span>80%</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-valuenow="90"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            style="
+                              width: 90%;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                            "
+                          >
+                            <div class="progress-text">
+                              <span>Git & Version Control</span><span>90%</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Progress -->
+                        <div class="progress">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-valuenow="75"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            style="
+                              width: 75%;
+                              background: linear-gradient(
+                                135deg,
+                                #667eea 0%,
+                                #764ba2 100%
+                              );
+                            "
+                          >
+                            <div class="progress-text">
+                              <span>Docker & Deployment</span><span>75%</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- WORKS -->
+                <div id="works-tab" class="tabcontent">
+                  <div class="pb-2">
+                    <h1 class="title title--h1 first-title title__separate">
+                      نمونه کار
+                    </h1>
+                  </div>
+
+                  <!-- Filter -->
+                  <div class="select">
+                    <span class="placeholder">انتخاب دسته بندی</span>
+                    <ul class="filter">
+                      <li class="filter__item">دسته بندی</li>
+                      <li class="filter__item active" data-filter="*">
+                        <a class="filter__link active" href="#filter">همه</a>
+                      </li>
+                      <li class="filter__item" data-filter=".category-web">
+                        <a class="filter__link" href="#filter">وب اپلیکیشن</a>
+                      </li>
+                      <li class="filter__item" data-filter=".category-api">
+                        <a class="filter__link" href="#filter">API</a>
+                      </li>
+                      <li class="filter__item" data-filter=".category-data">
+                        <a class="filter__link" href="#filter">تحلیل داده</a>
+                      </li>
+                    </ul>
+                    <input type="hidden" name="changemetoo" />
+                  </div>
+
+                  <!-- Gallery -->
+                  <div class="gallery-grid js-grid-row js-filter-container">
+                    <div class="gutter-sizer"></div>
+
+                    <!-- Project 1 -->
+                    <figure class="gallery-grid__item category-web">
+                      <div class="gallery-grid__image-wrap">
+                        <img
+                          class="gallery-grid__image cover lazyload"
+                          src="assets/img/cms-1.png"
+                          data-zoom
+                          alt="Django CMS"
+                        />
+                      </div>
+                      <figcaption class="gallery-grid__caption">
+                        <h4 class="title title--h6 gallery-grid__title">
+                          سیستم مدیریت محتوا
+                        </h4>
+                        <span class="gallery-grid__category">Django CMS</span>
+                      </figcaption>
+                    </figure>
+
+                    <!-- Project 2 -->
+                    <figure class="gallery-grid__item category-api">
+                      <div class="gallery-grid__image-wrap">
+                        <img
+                          class="gallery-grid__image cover lazyload"
+                          src="assets/img/cms-2.png"
+                          data-zoom
+                          alt="REST API"
+                        />
+                      </div>
+                      <figcaption class="gallery-grid__caption">
+                        <h4 class="title title--h6 gallery-grid__title">
+                          REST API پیشرفته
+                        </h4>
+                        <span class="gallery-grid__category"
+                          >Django REST Framework</span
+                        >
+                      </figcaption>
+                    </figure>
+
+                    <!-- Project 3 -->
+                    <figure class="gallery-grid__item category-web">
+                      <div class="gallery-grid__image-wrap">
+                        <img
+                          class="gallery-grid__image cover lazyload"
+                          src="assets/img/cms-3.png"
+                          data-zoom
+                          alt="E-commerce"
+                        />
+                      </div>
+                      <figcaption class="gallery-grid__caption">
+                        <h4 class="title title--h6 gallery-grid__title">
+                          فروشگاه آنلاین
+                        </h4>
+                        <span class="gallery-grid__category"
+                          >تجارت الکترونیک</span
+                        >
+                      </figcaption>
+                    </figure>
+
+                    <!-- Project 4 -->
+                    <figure class="gallery-grid__item category-web">
+                      <div class="gallery-grid__image-wrap">
+                        <img
+                          class="gallery-grid__image cover lazyload"
+                          src="assets/img/cms-4.png"
+                          data-zoom
+                          alt="Learning Platform"
+                        />
+                      </div>
+                      <figcaption class="gallery-grid__caption">
+                        <h4 class="title title--h6 gallery-grid__title">
+                          پلتفرم آموزشی
+                        </h4>
+                        <span class="gallery-grid__category"
+                          >سیستم آموزش آنلاین</span
+                        >
+                      </figcaption>
+                    </figure>
+
+                    <!-- Project 5 -->
+                    <figure class="gallery-grid__item category-data">
+                      <div class="gallery-grid__image-wrap">
+                        <img
+                          class="gallery-grid__image cover lazyload"
+                          src="assets/img/data-analyes.png"
+                          data-zoom
+                          alt="Data Analysis"
+                        />
+                      </div>
+                      <figcaption class="gallery-grid__caption">
+                        <h4 class="title title--h6 gallery-grid__title">
+                          تحلیل داده با Python
+                        </h4>
+                        <span class="gallery-grid__category">Data Science</span>
+                      </figcaption>
+                    </figure>
+
+                    <!-- Project 6 -->
+                    <figure class="gallery-grid__item category-web">
+                      <div class="gallery-grid__image-wrap">
+                        <img
+                          class="gallery-grid__image cover lazyload"
+                          src="assets/img/crwaling.png"
+                          data-zoom
+                          alt="Web Scraping"
+                        />
+                      </div>
+                      <figcaption class="gallery-grid__caption">
+                        <h4 class="title title--h6 gallery-grid__title">
+                          وب اسکرپینگ
+                        </h4>
+                        <span class="gallery-grid__category"
+                          >جمع‌آوری داده</span
+                        >
+                      </figcaption>
+                    </figure>
+
+                    <!-- Project 7 -->
+                    <figure class="gallery-grid__item category-api">
+                      <div class="gallery-grid__image-wrap">
+                        <img
+                          class="gallery-grid__image cover lazyload"
+                          src="assets/img/code-page.png"
+                          data-zoom
+                          alt="API Documentation"
+                        />
+                      </div>
+                      <figcaption class="gallery-grid__caption">
+                        <h4 class="title title--h6 gallery-grid__title">
+                          مستندسازی API
+                        </h4>
+                        <span class="gallery-grid__category"
+                          >Swagger/OpenAPI</span
+                        >
+                      </figcaption>
+                    </figure>
+
+                    <!-- Project 8 -->
+                    <figure class="gallery-grid__item category-data">
+                      <div class="gallery-grid__image-wrap">
+                        <img
+                          class="gallery-grid__image cover lazyload"
+                          src="assets/img/cpu_analysis.png"
+                          data-zoom
+                          alt="Performance Analysis"
+                        />
+                      </div>
+                      <figcaption class="gallery-grid__caption">
+                        <h4 class="title title--h6 gallery-grid__title">
+                          تحلیل عملکرد سیستم
+                        </h4>
+                        <span class="gallery-grid__category">بهینه‌سازی</span>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+
+                <!-- BLOG -->
+                <div id="blog-tab" class="tabcontent">
+                  <div class="pb-2">
+                    <h1 class="title title--h1 first-title title__separate">
+                      وبلاگ
+                    </h1>
+                  </div>
+
+                  <!-- News -->
+                  <div class="news-grid">
+                    <!-- Post 1 -->
+                    <article class="news-item box">
+                      <div class="news-item__image-wrap overlay overlay--45">
+                        <div class="news-item__date">25<span>آذر</span></div>
+                        <a class="news-item__link" href="single-post.html"></a>
+                        <img
+                          class="cover lazyload"
+                          src="assets/img/blog1.png"
+                          alt="Django REST Framework"
+                        />
+                      </div>
+                      <div class="news-item__caption">
+                        <h2 class="title title--h4">
+                          راهنمای کامل Django REST Framework
+                        </h2>
+                        <p>
+                          آموزش گام به گام ایجاد API های قدرتمند با Django REST
+                          Framework و بهترین روش‌های توسعه
+                        </p>
+                      </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="news-item box">
+                      <div class="news-item__image-wrap overlay overlay--45">
+                        <div class="news-item__date">20<span>آذر</span></div>
+                        <a class="news-item__link" href="single-post.html"></a>
+                        <img
+                          class="cover lazyload"
+                          src="assets/img/blog2.png"
+                          alt="Python Performance"
+                        />
+                      </div>
+                      <div class="news-item__caption">
+                        <h2 class="title title--h4">
+                          بهینه‌سازی عملکرد کد Python
+                        </h2>
+                        <p>
+                          تکنیک‌های پیشرفته برای بهبود سرعت اجرای برنامه‌های
+                          Python و کاهش مصرف حافظه
+                        </p>
+                      </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="news-item box">
+                      <div class="news-item__image-wrap overlay overlay--45">
+                        <div class="news-item__date">18<span>آذر</span></div>
+                        <a class="news-item__link" href="single-post.html"></a>
+                        <img
+                          class="cover lazyload"
+                          src="assets/img/blog3.png"
+                          alt="Database Design"
+                        />
+                      </div>
+                      <div class="news-item__caption">
+                        <h2 class="title title--h4">
+                          طراحی پایگاه داده برای Django
+                        </h2>
+                        <p>
+                          اصول طراحی پایگاه داده‌های بهینه و نحوه پیاده‌سازی
+                          آن‌ها در پروژه‌های Django
+                        </p>
+                      </div>
+                    </article>
+
+                    <!-- Post 4 -->
+                    <article class="news-item box">
+                      <div class="news-item__image-wrap overlay overlay--45">
+                        <div class="news-item__date">15<span>آذر</span></div>
+                        <a class="news-item__link" href="single-post.html"></a>
+                        <img
+                          class="cover lazyload"
+                          src="assets/img/data science.png"
+                          alt="Data Science"
+                        />
+                      </div>
+                      <div class="news-item__caption">
+                        <h2 class="title title--h4">
+                          تحلیل داده با Python و Pandas
+                        </h2>
+                        <p>
+                          آموزش استفاده از کتابخانه Pandas برای تحلیل و پردازش
+                          مجموعه داده‌های بزرگ
+                        </p>
+                      </div>
+                    </article>
+
+                    <!-- Post 5 -->
+                    <article class="news-item box">
+                      <div class="news-item__image-wrap overlay overlay--45">
+                        <div class="news-item__date">12<span>آذر</span></div>
+                        <a class="news-item__link" href="single-post.html"></a>
+                        <img
+                          class="cover lazyload"
+                          src="assets/img/crwaling.png"
+                          alt="Web Scraping"
+                        />
+                      </div>
+                      <div class="news-item__caption">
+                        <h2 class="title title--h4">وب اسکرپینگ با Python</h2>
+                        <p>
+                          تکنیک‌های جمع‌آوری اطلاعات از وب‌سایت‌ها با استفاده از
+                          Beautiful Soup و Scrapy
+                        </p>
+                      </div>
+                    </article>
+
+                    <!-- Post 6 -->
+                    <article class="news-item box">
+                      <div class="news-item__image-wrap overlay overlay--45">
+                        <div class="news-item__date">10<span>آذر</span></div>
+                        <a class="news-item__link" href="single-post.html"></a>
+                        <img
+                          class="cover lazyload"
+                          src="assets/img/analize.png"
+                          alt="API Testing"
+                        />
+                      </div>
+                      <div class="news-item__caption">
+                        <h2 class="title title--h4">تست API های Django</h2>
+                        <p>
+                          روش‌های مختلف تست API ها و اطمینان از کیفیت کد در
+                          پروژه‌های Django
+                        </p>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+
+                <!-- CONTACT -->
+                <div id="contact-tab" class="tabcontent">
+                  <div class="pb-2">
+                    <h1 class="title title--h1 first-title title__separate">
+                      تماس با من
+                    </h1>
+                  </div>
+
+                  <!-- Contact Info -->
+                  <div class="row">
+                    <div class="col-12 col-lg-4">
+                      <div class="contact-block">
+                        <h3 class="contact-block__title">
+                          <i class="fas fa-map-marker-alt"></i> آدرس
+                        </h3>
+                        <p>تهران، ایران</p>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                      <div class="contact-block">
+                        <h3 class="contact-block__title">
+                          <i class="fas fa-phone"></i> تلفن
+                        </h3>
+                        <p><a href="tel:+989122540108">09122540108</a></p>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4">
+                      <div class="contact-block">
+                        <h3 class="contact-block__title">
+                          <i class="fas fa-envelope"></i> ایمیل
+                        </h3>
+                        <p>
+                          <a href="mailto:erfanshakrola@gmail.com"
+                            >erfanshakrola@gmail.com</a
+                          >
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Map -->
+                  <div class="map-container">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207511.88729574723!2d51.24434181547848!3d35.6892523067263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff19821%3A0xf0a065984418a78e!2sTehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sus!4v1699123456789!5m2!1sen!2sus"
+                      width="100%"
+                      height="300"
+                      style="border: 0; border-radius: 15px"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+
+                  <h2 class="title title--h3">فرم تماس</h2>
+
+                  <form
+                    id="contact-form"
+                    class="contact-form"
+                    data-toggle="validator"
+                  >
+                    <div class="row">
+                      <div class="form-group col-12 col-md-6">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nameContact"
+                          name="nameContact"
+                          placeholder="نام و نام خانوادگی"
+                          required="required"
+                          autocomplete="on"
+                          oninvalid="setCustomValidity('پر کردن این فیلد ضروری است.')"
+                          onkeyup="setCustomValidity('')"
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group col-12 col-md-6">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="emailContact"
+                          name="emailContact"
+                          placeholder="ایمیل"
+                          required="required"
+                          autocomplete="on"
+                          oninvalid="setCustomValidity('ایمیل نادرست است')"
+                          onkeyup="setCustomValidity('')"
+                        />
+                        <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group col-12 col-md-12">
+                        <textarea
+                          class="textarea form-control"
+                          id="messageContact"
+                          name="messageContact"
+                          placeholder="پیام..."
+                          rows="4"
+                          required="required"
+                          oninvalid="setCustomValidity('فیلد را پر کنید')"
+                          onkeyup="setCustomValidity('')"
+                        ></textarea>
+                        <div class="help-block with-errors"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div
+                        class="col-12 col-md-6 order-2 order-md-1 text-center text-md-left"
+                      >
+                        <div id="validator-contact" class="hidden"></div>
+                      </div>
+                      <div class="col-12 col-md-6 order-1 order-md-2 text-left">
+                        <button
+                          type="submit"
+                          class="btn"
+                          style="
+                            background: linear-gradient(
+                              135deg,
+                              #667eea 0%,
+                              #764ba2 100%
+                            );
+                            color: white;
+                            border: none;
+                            padding: 12px 30px;
+                            border-radius: 25px;
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                          "
+                        >
+                          <i class="font-icon icon-send"></i> پیام بفرستید
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- Footer -->
+            <footer class="footer">© 2024 عرفان شکرالله زاده</footer>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="back-to-top"></div>
+
+    <!-- SVG masks -->
+    <svg class="svg-defs">
+      <clipPath id="avatar-box">
+        <path
+          d="M1.85379 38.4859C2.9221 18.6653 18.6653 2.92275 38.4858 1.85453 56.0986.905299 77.2792 0 94 0c16.721 0 37.901.905299 55.514 1.85453 19.821 1.06822 35.564 16.81077 36.632 36.63137C187.095 56.0922 188 77.267 188 94c0 16.733-.905 37.908-1.854 55.514-1.068 19.821-16.811 35.563-36.632 36.631C131.901 187.095 110.721 188 94 188c-16.7208 0-37.9014-.905-55.5142-1.855-19.8205-1.068-35.5637-16.81-36.63201-36.631C.904831 131.908 0 110.733 0 94c0-16.733.904831-37.9078 1.85379-55.5141z"
+        />
+      </clipPath>
+      <clipPath id="avatar-hexagon">
+        <path
+          d="M0 27.2891c0-4.6662 2.4889-8.976 6.52491-11.2986L31.308 1.72845c3.98-2.290382 8.8697-2.305446 12.8637-.03963l25.234 14.31558C73.4807 18.3162 76 22.6478 76 27.3426V56.684c0 4.6805-2.5041 9.0013-6.5597 11.3186L44.4317 82.2915c-3.9869 2.278-8.8765 2.278-12.8634 0L6.55974 68.0026C2.50414 65.6853 0 61.3645 0 56.684V27.2891z"
+        />
+      </clipPath>
+    </svg>
+
+    <!-- Demo Menu -->
+    <div class="btnSlideNav slideOpen"></div>
+    <div class="btnSlideNav slideClose"></div>
+    <div class="slideNav">
+      <ul class="list-unstyled">
+        <li class="slideNav__item rtl-mode">
+          <h4 class="title title--5">صفحات بیشتر</h4>
+          <a href="ltr/about.html">نسخه چپ چین</a>
+        </li>
+        <li class="slideNav__item"><a href="one-page.html">صفحه تکی</a></li>
+        <li class="slideNav__item">
+          <a href="background-2.html">پس زمینه مثلثی</a>
+        </li>
+        <li class="slideNav__item">
+          <a href="works_v2.html">نمونه کارها نسخه 2</a>
+        </li>
+      </ul>
+      <a href="dark/about.html" class="btn btn--dark">نسخه تیره</a>
+    </div>
+    <div class="overlay-slideNav"></div>
+    <!-- Demo Menu -->
+
+    <!-- JavaScripts -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/plugins.min.js"></script>
+    <script src="assets/js/common.js"></script>
+
+    <!-- Mapbox init -->
+    <script src="assets/js/mapbox.init.js"></script>
+    <script src="assets/demo/plugins-demo.js"></script>
+  </body>
+</html>
