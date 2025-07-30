@@ -1,0 +1,267 @@
+/* Modern Animated Progress Bars */
+:root {
+  --primary-color: #667eea;
+  --secondary-color: #764ba2;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --info-color: #2196f3;
+  --danger-color: #f44336;
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #0c9e04 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --gradient-6: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  --shadow-color: rgba(102, 126, 234, 0.3);
+}
+
+/* Modern Progress Container */
+.modern-progress {
+  margin-bottom: 2rem;
+  position: relative;
+  direction: ltr; /* Ensure consistent direction for progress bars */
+}
+
+/* RTL Support */
+[dir="rtl"] .modern-progress {
+  direction: ltr; /* Keep progress bars LTR even in RTL layouts */
+}
+
+[dir="rtl"] .modern-progress-label {
+  direction: rtl; /* But keep labels RTL */
+}
+
+.modern-progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ed9900;
+}
+
+.modern-progress-label .skill-name {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modern-progress-label .skill-icon {
+  width: 20px;
+  height: 20px;
+  background: var(--gradient-1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: white;
+}
+
+.modern-progress-label .skill-percent {
+  font-weight: 700;
+  font-size: 1rem;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Progress Bar Container */
+.modern-progress-bar {
+  position: relative;
+  height: 12px;
+  background: #f0f2f5;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bar Fill */
+.modern-progress-fill {
+  height: 100%;
+  border-radius: 25px;
+  position: relative;
+  width: 0%;
+  transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--gradient-1);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Ensure animation starts from 0 */
+.modern-progress-fill:not(.animated) {
+  width: 0% !important;
+}
+
+/* Animated Shine Effect */
+.modern-progress-fill.animated::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shine 3s infinite;
+  border-radius: 25px;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Pulse Animation */
+.modern-progress-fill.animated::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  background: inherit;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+/* Different Gradient Colors for Different Skills */
+.modern-progress:nth-child(1) .modern-progress-fill {
+  background: var(--gradient-1);
+}
+.modern-progress:nth-child(2) .modern-progress-fill {
+  background: var(--gradient-2);
+}
+.modern-progress:nth-child(3) .modern-progress-fill {
+  background: var(--gradient-3);
+}
+.modern-progress:nth-child(4) .modern-progress-fill {
+  background: var(--gradient-4);
+}
+.modern-progress:nth-child(5) .modern-progress-fill {
+  background: var(--gradient-5);
+}
+.modern-progress:nth-child(6) .modern-progress-fill {
+  background: var(--gradient-6);
+}
+.modern-progress:nth-child(7) .modern-progress-fill {
+  background: var(--gradient-1);
+}
+.modern-progress:nth-child(8) .modern-progress-fill {
+  background: var(--gradient-2);
+}
+.modern-progress:nth-child(9) .modern-progress-fill {
+  background: var(--gradient-3);
+}
+.modern-progress:nth-child(10) .modern-progress-fill {
+  background: var(--gradient-4);
+}
+
+/* Hover Effects */
+.modern-progress:hover .modern-progress-fill {
+  transform: scaleY(1.1);
+  transition: transform 0.3s ease;
+}
+
+.modern-progress:hover .modern-progress-label .skill-percent {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modern-progress {
+    margin-bottom: 1.5rem;
+  }
+
+  .modern-progress-label {
+    font-size: 0.9rem;
+  }
+
+  .modern-progress-bar {
+    height: 10px;
+  }
+}
+
+/* Animation on Scroll */
+.modern-progress-fill {
+  width: 0%;
+  transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-progress-fill.animated {
+  width: var(--target-width);
+}
+
+/* Glass Effect Variant */
+.glass-progress .modern-progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-progress .modern-progress-fill {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Neon Glow Effect */
+.neon-progress .modern-progress-fill {
+  box-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color),
+    0 0 15px var(--primary-color), 0 0 20px var(--primary-color);
+}
+
+/* Striped Animation */
+.striped-progress .modern-progress-fill {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 20px 20px;
+  animation: stripes 1s linear infinite;
+}
+
+@keyframes stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}

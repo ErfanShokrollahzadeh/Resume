@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <title>سایت شخصی عرفان شکرالله زاده</title>
+
+    <!-- Meta Data -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="author" content="Melika Khaliliyan" />
+    <meta name="description" content="vCard" />
+
+    <!-- Twitter data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@aliniyazi_" />
+    <meta name="twitter:title" content="vCard" />
+    <meta name="twitter:description" content="vCard" />
+    <meta name="twitter:image" content="assets/images/social.html" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Melika Khaliliyan" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="your url website" />
+    <meta property="og:image" content="assets/images/social.html" />
+    <meta property="og:description" content="vCard" />
+    <meta property="og:site_name" content="vCard" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicons/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Styles -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/styles/style-rtl-demo.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/styles/style-rtl.css" />
+    <link rel="stylesheet" type="text/css" href="assets/demo/style-demo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .tech-article {
+        transition: all 0.3s ease;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .tech-article:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .news-item__image-wrap {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px 15px 0 0;
+      }
+
+      .tech-icon-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        opacity: 0.9;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .tech-article:hover .tech-icon-overlay {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+      }
+
+      .tech-tags {
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tech-tags .tag {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .tech-tags .tag:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .news-item__date {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        border-radius: 10px;
+        padding: 8px 12px;
+        color: white;
+        font-weight: bold;
+        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+      }
+
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+
+      .news-item__caption h2 {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 15px;
+      }
+
+      .news-item__caption p {
+        line-height: 1.6;
+        color: #666;
+        font-size: 0.95rem;
+      }
+
+      .overlay--60::before {
+        background: linear-gradient(
+          45deg,
+          rgba(102, 126, 234, 0.6),
+          rgba(118, 75, 162, 0.6)
+        );
+      }
+
+      @media (max-width: 768px) {
+        .news-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .tech-icon-overlay {
+          width: 60px;
+          height: 60px;
+        }
+
+        .tech-icon-overlay i {
+          font-size: 2rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader__wrap">
+        <div class="circle-pulse">
+          <div class="circle-pulse__1"></div>
+          <div class="circle-pulse__2"></div>
+        </div>
+        <div class="preloader__progress"><span></span></div>
+      </div>
+    </div>
+
+    <main class="main">
+      <!-- Header Image -->
+      <div class="header-image">
+        <div
+          class="js-parallax"
+          style="background-image: url(assets/img/image_header.jpg)"
+        ></div>
+      </div>
+
+      <div class="container gutter-top">
+        <!-- Header -->
+        <header class="header box">
+          <div class="header__left">
+            <div class="header__photo">
+              <img
+                class="header__photo-img"
+                src="assets/img/avator3.JPG"
+                alt="Ronald Robertson"
+              />
+            </div>
+            <div class="header__base-info">
+              <h4 class="title titl--h4">عرفان شکرالله زاده</h4>
+              <div class="status">Full-Stack Software Developer (Python)</div>
+              <ul class="header__social">
+                <li>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100082935861062"
+                    ><i class="font-icon icon-facebook1" style="color: blue"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/erfan_shokr"
+                    ><i class="font-icon icon-twitter1" style="color: black"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/erfan_shokrollahzadeh"
+                    ><i class="font-icon icon-instagram1" style="color: red"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/erfan-shokrollahzadeh-babb95216/"
+                    ><i
+                      class="font-icon icon-linkedin1"
+                      style="color: #0077b5"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://t.me/ERFANsorena80"
+                    ><i
+                      class="bi bi-telegram"
+                      style="color: #0088cc; font-size: 1.2em"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://github.com/ErfanShokrollahzadeh"
+                    ><i class="font-icon icon-github" style="color: #24292e"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://stackoverflow.com/users/18267139/erfan-shokrollahzadeh?tab=profile"
+                    ><i
+                      class="bi bi-stack-overflow"
+                      style="color: #f48024; font-size: 20px"
+                    ></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="header__right">
+            <ul class="header__contact">
+              <li>
+                <span class="overhead">ایمیل</span>erfan.shokr300@gmail.com
+              </li>
+              <li><span class="overhead">تلفن</span>9334920731 (۹۸+) 🇮🇷</li>
+              <li><span class="overhead">تلفن</span>4243 246 505 (90+) 🇹🇷</li>
+              <li><span class="overhead">تلفن</span>99935703 (374+) 🇦🇲</li>
+            </ul>
+            <ul class="header__contact">
+              <li><span class="overhead">تولد</span>28 شهریور 1380</li>
+              <li><span class="overhead">مکان تولد</span>تهران، ایران</li>
+            </ul>
+          </div>
+        </header>
+
+        <div class="row sticky-parent">
+          <!-- Sidebar nav -->
+          <aside class="col-12 col-md-12 col-lg-2">
+            <div class="sidebar box sticky-column">
+              <ul class="nav">
+                <li class="nav__item">
+                  <a href="about.html"><i class="icon-user"></i>درباره ی ما</a>
+                </li>
+                <li class="nav__item">
+                  <a href="resume.html"><i class="icon-file-text"></i>رزومه</a>
+                </li>
+                <li class="nav__item">
+                  <a href="works.html"
+                    ><i class="icon-codesandbox"></i> کارها</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a href="certificate.html"
+                    ><i class="icon-award"></i>گواهینامه ها</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a class="active" href="blog.html"
+                    ><i class="icon-book-open"></i>وبلاگ</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a href="contact.html"><i class="icon-book"></i>تماس با ما</a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Content -->
+          <div class="col-12 col-md-12 col-lg-10">
+            <div class="box box-content">
+              <div class="pb-2">
+                <h1 class="title title--h1 first-title title__separate">
+                  وبلاگ فنی و توسعه نرم‌افزار
+                </h1>
+                <p
+                  class="blog-subtitle"
+                  style="color: #666; font-size: 1.1rem; margin-top: 15px"
+                >
+                  مقالات و تجربیات من در زمینه Python، Django، Full-Stack
+                  Development و فناوری‌های مدرن
+                </p>
+              </div>
+
+              <!-- News -->
+              <div class="news-grid">
+                <!-- Post -->
+                <article class="news-item box tech-article">
+                  <div class="news-item__image-wrap overlay overlay--60">
+                    <div class="news-item__date">15<span>دی</span></div>
+                    <a class="news-item__link" href="single-post.html"></a>
+                    <div class="tech-icon-overlay">
+                      <i
+                        class="fab fa-python"
+                        style="font-size: 3rem; color: #3776ab"
+                      ></i>
+                    </div>
+                    <img
+                      class="cover lazyload"
+                      src="assets/img/data science.png"
+                      alt="Python Development"
+                    />
+                  </div>
+                  <div class="news-item__caption">
+                    <h2 class="title title--h4">
+                      توسعه API با Django REST Framework
+                    </h2>
+                    <div class="tech-tags">
+                      <span class="tag">Python</span>
+                      <span class="tag">Django</span>
+                      <span class="tag">REST API</span>
+                    </div>
+                    <p>
+                      چگونه با استفاده از Django REST Framework یک API قدرتمند و
+                      مقیاس‌پذیر بسازیم. از مفاهیم پایه تا پیاده‌سازی احراز هویت
+                      و مجوزها.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Post -->
+                <article class="news-item box tech-article">
+                  <div class="news-item__image-wrap overlay overlay--60">
+                    <div class="news-item__date">12<span>دی</span></div>
+                    <a class="news-item__link" href="single-post.html"></a>
+                    <div class="tech-icon-overlay">
+                      <i
+                        class="fab fa-js-square"
+                        style="font-size: 3rem; color: #f7df1e"
+                      ></i>
+                    </div>
+                    <img
+                      class="cover lazyload"
+                      src="assets/img/code-page.png"
+                      alt="Full Stack Development"
+                    />
+                  </div>
+                  <div class="news-item__caption">
+                    <h2 class="title title--h4">
+                      Full-Stack Development با Python و React
+                    </h2>
+                    <div class="tech-tags">
+                      <span class="tag">React</span>
+                      <span class="tag">JavaScript</span>
+                      <span class="tag">Frontend</span>
+                    </div>
+                    <p>
+                      نحوه اتصال بک‌اند Django به فرانت‌اند React و ایجاد یک
+                      اپلیکیشن کامل با بهترین روش‌های توسعه مدرن.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Post -->
+                <article class="news-item box tech-article">
+                  <div class="news-item__image-wrap overlay overlay--60">
+                    <div class="news-item__date">10<span>دی</span></div>
+                    <a class="news-item__link" href="single-post.html"></a>
+                    <div class="tech-icon-overlay">
+                      <i
+                        class="fas fa-database"
+                        style="font-size: 3rem; color: #336791"
+                      ></i>
+                    </div>
+                    <img
+                      class="cover lazyload"
+                      src="assets/img/data-analyes.png"
+                      alt="Database Optimization"
+                    />
+                  </div>
+                  <div class="news-item__caption">
+                    <h2 class="title title--h4">
+                      بهینه‌سازی پایگاه داده در Django
+                    </h2>
+                    <div class="tech-tags">
+                      <span class="tag">PostgreSQL</span>
+                      <span class="tag">Database</span>
+                      <span class="tag">Performance</span>
+                    </div>
+                    <p>
+                      تکنیک‌های پیشرفته برای بهینه‌سازی کوئری‌ها، استفاده از
+                      ایندکس‌ها و بهبود عملکرد پایگاه داده در پروژه‌های Django.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Post -->
+                <article class="news-item box tech-article">
+                  <div class="news-item__image-wrap overlay overlay--60">
+                    <div class="news-item__date">8<span>دی</span></div>
+                    <a class="news-item__link" href="single-post.html"></a>
+                    <div class="tech-icon-overlay">
+                      <i
+                        class="fas fa-cloud"
+                        style="font-size: 3rem; color: #ff9900"
+                      ></i>
+                    </div>
+                    <img
+                      class="cover lazyload"
+                      src="assets/img/cpu_analysis.png"
+                      alt="Cloud Deployment"
+                    />
+                  </div>
+                  <div class="news-item__caption">
+                    <h2 class="title title--h4">
+                      Deploy کردن Django Apps در AWS
+                    </h2>
+                    <div class="tech-tags">
+                      <span class="tag">AWS</span>
+                      <span class="tag">Docker</span>
+                      <span class="tag">DevOps</span>
+                    </div>
+                    <p>
+                      راهنمای کامل برای استقرار اپلیکیشن‌های Django در AWS با
+                      استفاده از Docker، EC2 و RDS برای حداکثر کارایی و قابلیت
+                      اطمینان.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Post -->
+                <article class="news-item box tech-article">
+                  <div class="news-item__image-wrap overlay overlay--60">
+                    <div class="news-item__date">5<span>دی</span></div>
+                    <a class="news-item__link" href="single-post.html"></a>
+                    <div class="tech-icon-overlay">
+                      <i
+                        class="fas fa-robot"
+                        style="font-size: 3rem; color: #ff6b6b"
+                      ></i>
+                    </div>
+                    <img
+                      class="cover lazyload"
+                      src="assets/img/analize.png"
+                      alt="Machine Learning"
+                    />
+                  </div>
+                  <div class="news-item__caption">
+                    <h2 class="title title--h4">
+                      Machine Learning با Python و TensorFlow
+                    </h2>
+                    <div class="tech-tags">
+                      <span class="tag">TensorFlow</span>
+                      <span class="tag">ML</span>
+                      <span class="tag">AI</span>
+                    </div>
+                    <p>
+                      شروع کار با یادگیری ماشین در Python، از آماده‌سازی داده تا
+                      آموزش مدل‌های عمیق با TensorFlow و Keras.
+                    </p>
+                  </div>
+                </article>
+
+                <!-- Post -->
+                <article class="news-item box tech-article">
+                  <div class="news-item__image-wrap overlay overlay--60">
+                    <div class="news-item__date">2<span>دی</span></div>
+                    <a class="news-item__link" href="single-post.html"></a>
+                    <div class="tech-icon-overlay">
+                      <i
+                        class="fas fa-mobile-alt"
+                        style="font-size: 3rem; color: #61dafb"
+                      ></i>
+                    </div>
+                    <img
+                      class="cover lazyload"
+                      src="assets/img/creatpassword-random.png"
+                      alt="Responsive Design"
+                    />
+                  </div>
+                  <div class="news-item__caption">
+                    <h2 class="title title--h4">
+                      طراحی Responsive با CSS Grid و Flexbox
+                    </h2>
+                    <div class="tech-tags">
+                      <span class="tag">CSS</span>
+                      <span class="tag">Responsive</span>
+                      <span class="tag">UI/UX</span>
+                    </div>
+                    <p>
+                      تکنیک‌های مدرن CSS برای ایجاد رابط‌های کاربری واکنش‌گرا و
+                      زیبا که در تمام دستگاه‌ها عملکرد مناسبی داشته باشند.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">© 1399 ملیکا خلیلیان</footer>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="back-to-top"></div>
+
+    <!-- SVG masks -->
+    <svg class="svg-defs">
+      <clipPath id="avatar-box">
+        <path
+          d="M1.85379 38.4859C2.9221 18.6653 18.6653 2.92275 38.4858 1.85453 56.0986.905299 77.2792 0 94 0c16.721 0 37.901.905299 55.514 1.85453 19.821 1.06822 35.564 16.81077 36.632 36.63137C187.095 56.0922 188 77.267 188 94c0 16.733-.905 37.908-1.854 55.514-1.068 19.821-16.811 35.563-36.632 36.631C131.901 187.095 110.721 188 94 188c-16.7208 0-37.9014-.905-55.5142-1.855-19.8205-1.068-35.5637-16.81-36.63201-36.631C.904831 131.908 0 110.733 0 94c0-16.733.904831-37.9078 1.85379-55.5141z"
+        />
+      </clipPath>
+      <clipPath id="avatar-hexagon">
+        <path
+          d="M0 27.2891c0-4.6662 2.4889-8.976 6.52491-11.2986L31.308 1.72845c3.98-2.290382 8.8697-2.305446 12.8637-.03963l25.234 14.31558C73.4807 18.3162 76 22.6478 76 27.3426V56.684c0 4.6805-2.5041 9.0013-6.5597 11.3186L44.4317 82.2915c-3.9869 2.278-8.8765 2.278-12.8634 0L6.55974 68.0026C2.50414 65.6853 0 61.3645 0 56.684V27.2891z"
+        />
+      </clipPath>
+    </svg>
+
+    <!-- Demo Menu -->
+    <div class="btnSlideNav slideOpen"></div>
+    <div class="btnSlideNav slideClose"></div>
+    <div class="slideNav">
+      <ul class="list-unstyled">
+        <li class="slideNav__item rtl-mode">
+          <h4 class="title title--5">صفحات بیشتر</h4>
+          <a href="ltr/about.html">نسخه چپ چین</a>
+        </li>
+        <li class="slideNav__item"><a href="one-page.html">صفحه تکی</a></li>
+        <li class="slideNav__item">
+          <a href="background-2.html">پس زمینه مثلثی</a>
+        </li>
+        <li class="slideNav__item">
+          <a href="works_v2.html">نمونه کارها نسخه 2</a>
+        </li>
+      </ul>
+      <a href="dark/about.html" class="btn btn--dark">نسخه تیره</a>
+    </div>
+    <div class="overlay-slideNav"></div>
+    <!-- Demo Menu -->
+
+    <!-- JavaScripts -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/plugins.min.js"></script>
+    <script src="assets/js/common.js"></script>
+
+    <script src="assets/demo/plugins-demo.js"></script>
+  </body>
+</html>
