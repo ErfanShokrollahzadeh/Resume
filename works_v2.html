@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <title>عرفان شکرالله زاده - نمونه کارها</title>
+
+    <!-- Meta Data -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="author" content="عرفان شکرالله زاده" />
+    <meta
+      name="description"
+      content="Full-Stack Python Developer Portfolio - Django Projects"
+    />
+
+    <!-- Twitter data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@erfan_shokr" />
+    <meta
+      name="twitter:title"
+      content="عرفان شکرالله زاده - Full-Stack Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="نمونه کارهای توسعه نرم‌افزار و پروژه‌های وب"
+    />
+    <meta name="twitter:image" content="assets/images/social.html" />
+
+    <!-- Open Graph data -->
+    <meta
+      property="og:title"
+      content="عرفان شکرالله زاده - Full-Stack Developer"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://erfanshokrollahzadeh.com" />
+    <meta property="og:image" content="assets/images/social.html" />
+    <meta
+      property="og:description"
+      content="نمونه کارهای توسعه نرم‌افزار و پروژه‌های وب"
+    />
+    <meta property="og:site_name" content="عرفان شکرالله زاده Portfolio" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicons/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Styles -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/styles/style-rtl-demo.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/styles/style-rtl.css" />
+    <link rel="stylesheet" type="text/css" href="assets/demo/style-demo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* Modern Portfolio Styles */
+      .portfolio-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        text-align: center;
+      }
+
+      .portfolio-hero h1 {
+        color: white !important;
+        margin-bottom: 1rem;
+      }
+
+      .portfolio-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+
+      .stat-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: block;
+      }
+
+      .modern-filter {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 2rem 0;
+        border: 1px solid #e0e6ed;
+      }
+
+      .filter-title {
+        color: #667eea;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .filter-btn {
+        background: #f8f9ff;
+        color: #667eea;
+        border: 2px solid #e0e6ed;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e6ed;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .project-image {
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+        background: linear-gradient(
+          135deg,
+          #f093fb 0%,
+          #f5576c 50%,
+          #4facfe 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover .project-image img {
+        transform: scale(1.1);
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(102, 126, 234, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+
+      .overlay-content {
+        text-align: center;
+        color: white;
+      }
+
+      .overlay-content i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-info {
+        padding: 1.5rem;
+      }
+
+      .project-title {
+        color: #333;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .project-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .tech-tag {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .project-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .project-link:hover {
+        color: #764ba2;
+        transform: translateX(5px);
+      }
+
+      @media (max-width: 768px) {
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .filter-buttons {
+          justify-content: center;
+        }
+
+        .portfolio-stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader__wrap">
+        <div class="circle-pulse">
+          <div class="circle-pulse__1"></div>
+          <div class="circle-pulse__2"></div>
+        </div>
+        <div class="preloader__progress"><span></span></div>
+      </div>
+    </div>
+
+    <main class="main">
+      <!-- Header Image -->
+      <div class="header-image">
+        <div
+          class="js-parallax"
+          style="background-image: url(assets/img/image_header.jpg)"
+        ></div>
+      </div>
+
+      <div class="container gutter-top">
+        <!-- Header -->
+        <header class="header box">
+          <div class="header__left">
+            <div class="header__photo">
+              <img
+                class="header__photo-img"
+                src="assets/img/avator3.JPG"
+                alt="عرفان شکرالله زاده"
+              />
+            </div>
+            <div class="header__base-info">
+              <h4 class="title titl--h4">عرفان شکرالله زاده</h4>
+              <div class="status">Full-Stack Software Developer (Python)</div>
+              <ul class="header__social">
+                <li>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100082935861062"
+                    ><i class="font-icon icon-facebook1" style="color: blue"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/erfan_shokr"
+                    ><i class="font-icon icon-twitter1" style="color: black"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/erfan_shokrollahzadeh"
+                    ><i class="font-icon icon-instagram1" style="color: red"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/erfan-shokrollahzadeh-babb95216/"
+                    ><i
+                      class="font-icon icon-linkedin1"
+                      style="color: #0077b5"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://t.me/ERFANsorena80"
+                    ><i
+                      class="bi bi-telegram"
+                      style="color: #0088cc; font-size: 1.2em"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://github.com/ErfanShokrollahzadeh"
+                    ><i class="font-icon icon-github" style="color: #24292e"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://stackoverflow.com/users/18267139/erfan-shokrollahzadeh?tab=profile"
+                    ><i
+                      class="bi bi-stack-overflow"
+                      style="color: #f48024; font-size: 20px"
+                    ></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="header__right">
+            <ul class="header__contact">
+              <li>
+                <span class="overhead">ایمیل</span>erfan.shokr300@gmail.com
+              </li>
+              <li><span class="overhead">تلفن</span>9334920731 (98+) 🇮🇷</li>
+              <li><span class="overhead">تلفن</span>41 43 246 505 (90+) 🇹🇷</li>
+              <li><span class="overhead">تلفن</span>999 35703 (374+) 🇦🇲</li>
+              <li><span class="overhead">تلفن</span>574 88 38 50 (995+) 🇬🇪</li>
+            </ul>
+            <ul class="header__contact">
+              <li><span class="overhead">تولد</span>28 شهریور 1380</li>
+              <li><span class="overhead">مکان تولد</span>تهران، ایران</li>
+            </ul>
+          </div>
+        </header>
+
+        <div class="row sticky-parent">
+          <!-- Sidebar nav -->
+          <aside class="col-12 col-md-12 col-lg-2">
+            <div class="sidebar box sticky-column">
+              <ul class="nav">
+                <li class="nav__item">
+                  <a href="about.html"><i class="icon-user"></i>درباره ی ما</a>
+                </li>
+                <li class="nav__item">
+                  <a href="resume.html"><i class="icon-file-text"></i>رزومه</a>
+                </li>
+                <li class="nav__item">
+                  <a class="active" href="works.html"
+                    ><i class="icon-codesandbox"></i> کارها</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a href="certificate.html"
+                    ><i class="icon-award"></i>گواهینامه ها</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a href="blog.html"><i class="icon-book-open"></i>وبلاگ</a>
+                </li>
+                <li class="nav__item">
+                  <a href="contact.html"><i class="icon-book"></i>تماس با ما</a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Content -->
+          <div class="col-12 col-md-12 col-lg-10">
+            <div class="box box-content">
+              <!-- Portfolio Hero Section -->
+              <div class="portfolio-hero">
+                <h1 class="title title--h1">نمونه کارهای توسعه نرم‌افزار</h1>
+                <p>
+                  مجموعه‌ای از پروژه‌های Full-Stack، API Development، و
+                  اپلیکیشن‌های وب مدرن
+                </p>
+                <div class="portfolio-stats">
+                  <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span>پروژه تکمیل شده</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">5+</span>
+                    <span>سال تجربه</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">20+</span>
+                    <span>مشتری راضی</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span>تکنولوژی</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modern Filter -->
+              <div class="modern-filter">
+                <h3 class="filter-title">دسته‌بندی پروژه‌ها</h3>
+                <div class="filter-buttons">
+                  <a href="#" class="filter-btn active" data-filter="*"
+                    >همه پروژه‌ها</a
+                  >
+                  <a href="#" class="filter-btn" data-filter=".web-app"
+                    >وب اپلیکیشن</a
+                  >
+                  <a href="#" class="filter-btn" data-filter=".api-backend"
+                    >API & Backend</a
+                  >
+                  <a href="#" class="filter-btn" data-filter=".mobile-app"
+                    >موبایل اپ</a
+                  >
+                  <a href="#" class="filter-btn" data-filter=".data-science"
+                    >داده کاوی</a
+                  >
+                </div>
+              </div>
+
+              <!-- Project Grid -->
+              <div class="project-grid">
+                <!-- E-commerce Platform -->
+                <div class="project-card web-app">
+                  <div class="project-image">
+                    <img src="assets/img/cms-1.png" alt="E-commerce Platform" />
+                    <div class="project-overlay">
+                      <div class="overlay-content">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>پلتفرم فروشگاهی</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">سیستم مدیریت فروشگاه آنلاین</h4>
+                    <p class="project-description">
+                      پلتفرم فروشگاهی کامل با Django و React، شامل پنل مدیریت،
+                      سیستم پرداخت، و مدیریت موجودی
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-tag">Django</span>
+                      <span class="tech-tag">React</span>
+                      <span class="tech-tag">PostgreSQL</span>
+                      <span class="tech-tag">Redis</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        مشاهده دمو
+                      </a>
+                      <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        کد منبع
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CMS Dashboard -->
+                <div class="project-card web-app">
+                  <div class="project-image">
+                    <img src="assets/img/cms-2.png" alt="CMS Dashboard" />
+                    <div class="project-overlay">
+                      <div class="overlay-content">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <p>پنل مدیریت</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">سیستم مدیریت محتوا (CMS)</h4>
+                    <p class="project-description">
+                      پنل مدیریت پیشرفته برای مدیریت محتوا، کاربران، و تنظیمات
+                      سایت با رابط کاربری مدرن
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-tag">Django</span>
+                      <span class="tech-tag">Vue.js</span>
+                      <span class="tech-tag">MySQL</span>
+                      <span class="tech-tag">Docker</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        مشاهده دمو
+                      </a>
+                      <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        کد منبع
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Data Analytics API -->
+                <div class="project-card api-backend data-science">
+                  <div class="project-image">
+                    <img
+                      src="assets/img/analize.png"
+                      alt="Data Analytics API"
+                    />
+                    <div class="project-overlay">
+                      <div class="overlay-content">
+                        <i class="fas fa-chart-line"></i>
+                        <p>تحلیل داده</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">سیستم تحلیل داده و گزارش‌گیری</h4>
+                    <p class="project-description">
+                      API قدرتمند برای تحلیل داده‌های بزرگ، تولید گزارش، و نمایش
+                      نمودارهای تعاملی
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-tag">FastAPI</span>
+                      <span class="tech-tag">Pandas</span>
+                      <span class="tech-tag">NumPy</span>
+                      <span class="tech-tag">Plotly</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        مشاهده دمو
+                      </a>
+                      <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        کد منبع
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Portfolio Website -->
+                <div class="project-card web-app">
+                  <div class="project-image">
+                    <img src="assets/img/cms-3.png" alt="Portfolio Website" />
+                    <div class="project-overlay">
+                      <div class="overlay-content">
+                        <i class="fas fa-user-tie"></i>
+                        <p>وبسایت شخصی</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">وبسایت نمونه کار شخصی</h4>
+                    <p class="project-description">
+                      وبسایت نمونه کار مدرن و ریسپانسیو با قابلیت مدیریت
+                      پروژه‌ها و بلاگ
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-tag">Django</span>
+                      <span class="tech-tag">Bootstrap</span>
+                      <span class="tech-tag">SQLite</span>
+                      <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        مشاهده دمو
+                      </a>
+                      <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        کد منبع
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Password Generator App -->
+                <div class="project-card mobile-app">
+                  <div class="project-image">
+                    <img
+                      src="assets/img/creatpassword-random.png"
+                      alt="Password Generator"
+                    />
+                    <div class="project-overlay">
+                      <div class="overlay-content">
+                        <i class="fas fa-key"></i>
+                        <p>تولید رمز عبور</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">اپلیکیشن تولید رمز عبور امن</h4>
+                    <p class="project-description">
+                      اپلیکیشن موبایل برای تولید رمزهای عبور قوی و امن با
+                      قابلیت‌های پیشرفته
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-tag">React Native</span>
+                      <span class="tech-tag">TypeScript</span>
+                      <span class="tech-tag">AsyncStorage</span>
+                      <span class="tech-tag">Expo</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        مشاهده دمو
+                      </a>
+                      <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        کد منبع
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- System Monitoring -->
+                <div class="project-card api-backend">
+                  <div class="project-image">
+                    <img
+                      src="assets/img/cpu_analysis.png"
+                      alt="System Monitoring"
+                    />
+                    <div class="project-overlay">
+                      <div class="overlay-content">
+                        <i class="fas fa-server"></i>
+                        <p>نظارت بر سیستم</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">سیستم نظارت و مانیتورینگ سرور</h4>
+                    <p class="project-description">
+                      ابزار پیشرفته برای نظارت بر عملکرد سرور، CPU، RAM، و سایر
+                      منابع سیستم
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">Flask</span>
+                      <span class="tech-tag">InfluxDB</span>
+                      <span class="tech-tag">Grafana</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        مشاهده دمو
+                      </a>
+                      <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        کد منبع
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Web Scraping Tool -->
+                <div class="project-card api-backend data-science">
+                  <div class="project-image">
+                    <img src="assets/img/crwaling.png" alt="Web Scraping" />
+                    <div class="project-overlay">
+                      <div class="overlay-content">
+                        <i class="fas fa-spider"></i>
+                        <p>استخراج داده</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">ابزار استخراج داده از وب</h4>
+                    <p class="project-description">
+                      سیستم پیشرفته برای استخراج، پردازش، و ذخیره داده‌های وب با
+                      قابلیت برنامه‌ریزی
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-tag">Python</span>
+                      <span class="tech-tag">Scrapy</span>
+                      <span class="tech-tag">BeautifulSoup</span>
+                      <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        مشاهده دمو
+                      </a>
+                      <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        کد منبع
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Analytics Dashboard -->
+                <div class="project-card web-app data-science">
+                  <div class="project-image">
+                    <img src="assets/img/cms-4.png" alt="Analytics Dashboard" />
+                    <div class="project-overlay">
+                      <div class="overlay-content">
+                        <i class="fas fa-chart-pie"></i>
+                        <p>داشبورد تحلیلی</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">داشبورد تحلیلی و گزارش‌گیری</h4>
+                    <p class="project-description">
+                      داشبورد تعاملی برای نمایش آمار، تحلیل‌ها و گزارش‌های مختلف
+                      کسب‌وکار
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-tag">React</span>
+                      <span class="tech-tag">D3.js</span>
+                      <span class="tech-tag">Node.js</span>
+                      <span class="tech-tag">MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        مشاهده دمو
+                      </a>
+                      <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        کد منبع
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- AI & Machine Learning -->
+                <div class="project-card api-backend data-science">
+                  <div class="project-image">
+                    <img src="assets/img/data-analyes.png" alt="AI & ML" />
+                    <div class="project-overlay">
+                      <div class="overlay-content">
+                        <i class="fas fa-robot"></i>
+                        <p>هوش مصنوعی</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-info">
+                    <h4 class="project-title">
+                      سیستم هوش مصنوعی و یادگیری ماشین
+                    </h4>
+                    <p class="project-description">
+                      API پیشرفته برای پردازش تصویر، تحلیل متن، و پیش‌بینی با
+                      استفاده از ML
+                    </p>
+                    <div class="project-tech">
+                      <span class="tech-tag">TensorFlow</span>
+                      <span class="tech-tag">scikit-learn</span>
+                      <span class="tech-tag">OpenCV</span>
+                      <span class="tech-tag">FastAPI</span>
+                    </div>
+                    <div class="project-links">
+                      <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        مشاهده دمو
+                      </a>
+                      <a href="#" class="project-link">
+                        <i class="fab fa-github"></i>
+                        کد منبع
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+              © 2024 عرفان شکرالله زاده - Full-Stack Developer
+            </footer>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="back-to-top"></div>
+
+    <!-- SVG masks -->
+    <svg class="svg-defs">
+      <clipPath id="avatar-box">
+        <path
+          d="M1.85379 38.4859C2.9221 18.6653 18.6653 2.92275 38.4858 1.85453 56.0986.905299 77.2792 0 94 0c16.721 0 37.901.905299 55.514 1.85453 19.821 1.06822 35.564 16.81077 36.632 36.63137C187.095 56.0922 188 77.267 188 94c0 16.733-.905 37.908-1.854 55.514-1.068 19.821-16.811 35.563-36.632 36.631C131.901 187.095 110.721 188 94 188c-16.7208 0-37.9014-.905-55.5142-1.855-19.8205-1.068-35.5637-16.81-36.63201-36.631C.904831 131.908 0 110.733 0 94c0-16.733.904831-37.9078 1.85379-55.5141z"
+        />
+      </clipPath>
+      <clipPath id="avatar-hexagon">
+        <path
+          d="M0 27.2891c0-4.6662 2.4889-8.976 6.52491-11.2986L31.308 1.72845c3.98-2.290382 8.8697-2.305446 12.8637-.03963l25.234 14.31558C73.4807 18.3162 76 22.6478 76 27.3426V56.684c0 4.6805-2.5041 9.0013-6.5597 11.3186L44.4317 82.2915c-3.9869 2.278-8.8765 2.278-12.8634 0L6.55974 68.0026C2.50414 65.6853 0 61.3645 0 56.684V27.2891z"
+        />
+      </clipPath>
+    </svg>
+
+    <!-- Demo Menu -->
+    <div class="btnSlideNav slideOpen"></div>
+    <div class="btnSlideNav slideClose"></div>
+    <div class="slideNav">
+      <ul class="list-unstyled">
+        <li class="slideNav__item rtl-mode">
+          <h4 class="title title--5">صفحات بیشتر</h4>
+          <a href="ltr/about.html">نسخه چپ چین</a>
+        </li>
+        <li class="slideNav__item"><a href="one-page.html">صفحه تکی</a></li>
+        <li class="slideNav__item">
+          <a href="background-2.html">پس زمینه مثلثی</a>
+        </li>
+        <li class="slideNav__item">
+          <a href="works_v2.html">نمونه کارها نسخه 2</a>
+        </li>
+      </ul>
+      <a href="dark/about.html" class="btn btn--dark">نسخه تیره</a>
+    </div>
+    <div class="overlay-slideNav"></div>
+    <!-- Demo Menu -->
+
+    <!-- JavaScripts -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/plugins.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/demo/plugins-demo.js"></script>
+
+    <!-- Portfolio Filter Script -->
+    <script>
+      $(document).ready(function () {
+        // Filter functionality
+        $(".filter-btn").click(function (e) {
+          e.preventDefault();
+
+          // Remove active class from all buttons
+          $(".filter-btn").removeClass("active");
+          // Add active class to clicked button
+          $(this).addClass("active");
+
+          var filterValue = $(this).attr("data-filter");
+
+          if (filterValue === "*") {
+            $(".project-card").fadeIn(300);
+          } else {
+            $(".project-card").fadeOut(300);
+            $(filterValue).fadeIn(300);
+          }
+        });
+
+        // Add hover effects
+        $(".project-card").hover(
+          function () {
+            $(this).find(".project-overlay").fadeIn(200);
+          },
+          function () {
+            $(this).find(".project-overlay").fadeOut(200);
+          },
+        );
+      });
+    </script>
+  </body>
+</html>

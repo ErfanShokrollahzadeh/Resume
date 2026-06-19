@@ -1,0 +1,1233 @@
+<!doctype html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <title>عرفان شکرالله زاده - مقاله تکنیک‌های مدرن Django</title>
+
+    <!-- Meta Data -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <meta name="author" content="عرفان شکرالله زاده" />
+    <meta
+      name="description"
+      content="Full-Stack Python Developer - Django Modern Techniques Article"
+    />
+
+    <!-- Twitter data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@erfan_shokr" />
+    <meta
+      name="twitter:title"
+      content="تکنیک‌های مدرن Django - عرفان شکرالله زاده"
+    />
+    <meta
+      name="twitter:description"
+      content="آموزش جامع تکنیک‌های پیشرفته Django برای توسعه وب مدرن"
+    />
+    <meta name="twitter:image" content="assets/images/social.html" />
+
+    <!-- Open Graph data -->
+    <meta
+      property="og:title"
+      content="عرفان شکرالله زاده - Full-Stack Python Developer"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="your url website" />
+    <meta property="og:image" content="assets/images/social.html" />
+    <meta
+      property="og:description"
+      content="تکنیک‌های مدرن Django و بهترین روش‌های توسعه وب"
+    />
+    <meta property="og:site_name" content="عرفان شکرالله زاده Portfolio" />
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="assets/images/favicons/favicon.ico"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicons/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Styles -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/styles/style-rtl-demo.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/styles/style-rtl.css" />
+    <link rel="stylesheet" type="text/css" href="assets/demo/style-demo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+
+    <style>
+      /* Modern Blog Post Styles */
+      body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .header-image {
+        position: relative;
+        height: 400px;
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .header-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+
+      .header-image .js-parallax {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover !important;
+        background-position: center !important;
+        filter: blur(2px);
+      }
+
+      .article-hero {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        padding: 2rem;
+      }
+
+      .article-hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1rem;
+      }
+
+      .article-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .box-content {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e6ed;
+        margin-top: -100px;
+        position: relative;
+        z-index: 3;
+      }
+
+      .header-post {
+        padding: 3rem 2rem 2rem;
+        background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        border-bottom: 1px solid #e0e6ed;
+      }
+
+      .header-post h1 {
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .tech-tag {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .article-content {
+        padding: 2rem;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .article-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+      }
+
+      .article-content h3 {
+        color: #667eea;
+        margin: 2rem 0 1rem;
+        font-size: 1.5rem;
+      }
+
+      .code-block {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+        border-left: 4px solid #667eea;
+      }
+
+      .block-quote {
+        background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        border-left: 4px solid #667eea;
+        padding: 1.5rem;
+        border-radius: 0 10px 10px 0;
+        margin: 2rem 0;
+        position: relative;
+      }
+
+      .block-quote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 4rem;
+        color: #667eea;
+        opacity: 0.3;
+      }
+
+      .gallery-post {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .gallery-post__item {
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-post__item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .footer-post {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+        background: #f8f9ff;
+        border-top: 1px solid #e0e6ed;
+      }
+
+      .footer-post__share {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .footer-post__share:first-child {
+        background: #3b5998;
+        color: white;
+      }
+
+      .footer-post__share:nth-child(2) {
+        background: #1da1f2;
+        color: white;
+      }
+
+      .footer-post__share:last-child {
+        background: #0077b5;
+        color: white;
+      }
+
+      .footer-post__share:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .comment-section {
+        background: white;
+        border-radius: 20px;
+        margin-top: 2rem;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .comment-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.5rem 2rem;
+        font-weight: 600;
+      }
+
+      .comment-box {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .comment-box:last-child {
+        border-bottom: none;
+      }
+
+      .comment-box__inner {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .comment-box__body {
+        flex: 1;
+      }
+
+      .comment-box__details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .comment-box__details-date {
+        color: #666;
+        font-size: 0.9rem;
+        font-weight: normal;
+      }
+
+      .comment-box__footer {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+        list-style: none;
+        padding: 0;
+      }
+
+      .comment-box__footer li {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        color: #666;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .comment-box__footer li:hover {
+        color: #667eea;
+      }
+
+      .comment-form {
+        padding: 2rem;
+        background: #f8f9ff;
+        display: flex;
+        gap: 1rem;
+        align-items: flex-end;
+      }
+
+      .comment-form .textarea {
+        flex: 1;
+        border: 2px solid #e0e6ed;
+        border-radius: 15px;
+        padding: 1rem;
+        resize: vertical;
+        min-height: 80px;
+        transition: all 0.3s ease;
+      }
+
+      .comment-form .textarea:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .comment-form .btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 1rem;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .comment-form .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .social-auth {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem 2rem;
+        background: #f8f9ff;
+        border-bottom: 1px solid #e0e6ed;
+        list-style: none;
+        margin: 0;
+      }
+
+      .social-auth__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-auth__link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .reading-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        z-index: 1000;
+        transition: width 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .article-hero h1 {
+          font-size: 2rem;
+        }
+
+        .article-meta {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .header-post {
+          padding: 2rem 1rem;
+        }
+
+        .article-content {
+          padding: 1.5rem;
+        }
+
+        .footer-post {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <div class="preloader__wrap">
+        <div class="circle-pulse">
+          <div class="circle-pulse__1"></div>
+          <div class="circle-pulse__2"></div>
+        </div>
+        <div class="preloader__progress"><span></span></div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-line"></div>
+
+    <main class="main">
+      <!-- Header Image -->
+      <div class="header-image">
+        <div
+          class="js-parallax"
+          style="background-image: url(assets/img/blog1.png)"
+        ></div>
+        <div class="article-hero">
+          <h1 style="color: #e55757">
+            <i class="fab fa-python"></i> تکنیک‌های مدرن Django
+          </h1>
+          <div class="article-meta">
+            <div class="meta-item">
+              <i class="fas fa-user"></i>
+              <span>عرفان شکرالله زاده</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-calendar"></i>
+              <span>23 تیر 1404</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-clock"></i>
+              <span>8 دقیقه مطالعه</span>
+            </div>
+            <div class="meta-item">
+              <i class="fas fa-tags"></i>
+              <span>Django, Python</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container gutter-top">
+        <!-- Header -->
+        <header class="header box">
+          <div class="header__left">
+            <div class="header__photo">
+              <img
+                class="header__photo-img"
+                src="assets/img/avator3.JPG"
+                alt="عرفان شکرالله زاده"
+              />
+            </div>
+            <div class="header__base-info">
+              <h4 class="title titl--h4">عرفان شکرالله زاده</h4>
+              <div class="status">Full-Stack Software Developer (Python)</div>
+              <ul class="header__social">
+                <li>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100082935861062"
+                    ><i class="font-icon icon-facebook1" style="color: blue"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/erfan_shokr"
+                    ><i class="font-icon icon-twitter1" style="color: black"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/erfan_shokrollahzadeh"
+                    ><i class="font-icon icon-instagram1" style="color: red"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/erfan-shokrollahzadeh-babb95216/"
+                    ><i
+                      class="font-icon icon-linkedin1"
+                      style="color: #0077b5"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://t.me/ERFANsorena80"
+                    ><i
+                      class="bi bi-telegram"
+                      style="color: #0088cc; font-size: 1.2em"
+                    ></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://github.com/ErfanShokrollahzadeh"
+                    ><i class="font-icon icon-github" style="color: #24292e"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://stackoverflow.com/users/18267139/erfan-shokrollahzadeh?tab=profile"
+                    ><i
+                      class="bi bi-stack-overflow"
+                      style="color: #f48024; font-size: 20px"
+                    ></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="header__right">
+            <ul class="header__contact">
+              <li>
+                <span class="overhead">ایمیل</span>erfan.shokr300@gmail.com
+              </li>
+              <li><span class="overhead">تلفن</span>9334920731 (98+) 🇮🇷</li>
+              <li><span class="overhead">تلفن</span>41 43 246 505 (90+) 🇹🇷</li>
+              <li><span class="overhead">تلفن</span>999 35703 (374+) 🇦🇲</li>
+              <li><span class="overhead">تلفن</span>574 88 38 50 (995+) 🇬🇪</li>
+            </ul>
+            <ul class="header__contact">
+              <li><span class="overhead">تولد</span>28 شهریور 1380</li>
+              <li><span class="overhead">مکان تولد</span>تهران، ایران</li>
+            </ul>
+          </div>
+        </header>
+
+        <div class="row sticky-parent">
+          <!-- Sidebar nav -->
+          <aside class="col-12 col-md-12 col-lg-2">
+            <div class="sidebar box sticky-column">
+              <ul class="nav">
+                <li class="nav__item">
+                  <a href="about.html"><i class="icon-user"></i>درباره ی ما</a>
+                </li>
+                <li class="nav__item">
+                  <a href="resume.html"><i class="icon-file-text"></i>رزومه</a>
+                </li>
+                <li class="nav__item">
+                  <a href="works.html"
+                    ><i class="icon-codesandbox"></i> کارها</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a href="certificate.html"
+                    ><i class="icon-award"></i>گواهینامه ها</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a class="active" href="blog.html"
+                    ><i class="icon-book-open"></i>وبلاگ</a
+                  >
+                </li>
+                <li class="nav__item">
+                  <a href="contact.html"><i class="icon-book"></i>تماس با ما</a>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Content -->
+          <div class="col-12 col-md-12 col-lg-10">
+            <div class="box box-content">
+              <!-- Post -->
+              <div class="pb-3">
+                <header class="header-post">
+                  <h1 class="title title--h1">
+                    تکنیک‌های مدرن Django برای توسعه وب حرفه‌ای
+                  </h1>
+                  <div class="tech-tags">
+                    <span class="tech-tag"
+                      ><i class="fab fa-python"></i> Python</span
+                    >
+                    <span class="tech-tag"
+                      ><i class="fas fa-globe"></i> Django</span
+                    >
+                    <span class="tech-tag"
+                      ><i class="fas fa-database"></i> PostgreSQL</span
+                    >
+                    <span class="tech-tag"
+                      ><i class="fas fa-server"></i> REST API</span
+                    >
+                    <span class="tech-tag"
+                      ><i class="fas fa-rocket"></i> Performance</span
+                    >
+                  </div>
+                  <div class="caption-post">
+                    <p>
+                      در این مقاله به بررسی جدیدترین تکنیک‌های Django می‌پردازیم
+                      که می‌تواند عملکرد و کیفیت پروژه‌های وب شما را به طور
+                      چشمگیری بهبود بخشد. از Django REST Framework گرفته تا
+                      تکنیک‌های بهینه‌سازی و امنیت.
+                    </p>
+                  </div>
+                  <div class="header-post__image-wrap">
+                    <img
+                      class="cover lazyload"
+                      src="assets/img/blog1.png"
+                      data-zoom
+                      alt="Django Modern Techniques"
+                    />
+                  </div>
+                </header>
+
+                <div class="article-content">
+                  <div class="reading-progress"></div>
+
+                  <h3>
+                    <i class="fas fa-cogs"></i> 1. Django REST Framework و API
+                    Design
+                  </h3>
+                  <p>
+                    Django REST Framework یکی از قدرتمندترین ابزارهای موجود برای
+                    ساخت API های RESTful است. با استفاده از Serializer ها و
+                    ViewSet ها می‌توانید به سرعت API های پیچیده و قابل اعتماد
+                    بسازید.
+                  </p>
+
+                  <div class="code-block">
+                    from rest_framework import serializers, viewsets from
+                    rest_framework.decorators import action from
+                    rest_framework.response import Response class
+                    ProductSerializer(serializers.ModelSerializer): class Meta:
+                    model = Product fields = '__all__' class
+                    ProductViewSet(viewsets.ModelViewSet): queryset =
+                    Product.objects.all() serializer_class = ProductSerializer
+                    @action(detail=False, methods=['get']) def featured(self,
+                    request): featured_products =
+                    Product.objects.filter(is_featured=True) serializer =
+                    self.get_serializer(featured_products, many=True) return
+                    Response(serializer.data)
+                  </div>
+
+                  <h3>
+                    <i class="fas fa-shield-alt"></i> 2. امنیت و احراز هویت
+                  </h3>
+                  <p>
+                    امنیت یکی از مهمترین جنبه‌های توسعه وب است. Django ابزارهای
+                    قدرتمندی برای حفاظت از اپلیکیشن شما در برابر حملات مختلف
+                    ارائه می‌دهد.
+                  </p>
+
+                  <blockquote class="block-quote">
+                    <p>
+                      همیشه از HTTPS استفاده کنید، پسوردها را هش کنید و از
+                      middleware های امنیتی Django بهره ببرید. امنیت یک انتخاب
+                      نیست، بلکه ضرورت است.
+                    </p>
+                    <span class="block-quote__author">عرفان شکرالله زاده</span>
+                  </blockquote>
+
+                  <h3>
+                    <i class="fas fa-tachometer-alt"></i> 3. بهینه‌سازی عملکرد
+                  </h3>
+                  <p>
+                    بهینه‌سازی عملکرد Django شامل موارد مختلفی از جمله کش کردن،
+                    بهینه‌سازی Query ها و استفاده از CDN است. در ادامه نمونه‌ای
+                    از بهینه‌سازی Query ها را مشاهده می‌کنید.
+                  </p>
+
+                  <div class="code-block">
+                    # بد - N+1 Problem products = Product.objects.all() for
+                    product in products: print(product.category.name) # Query
+                    اضافی برای هر محصول # خوب - Select Related products =
+                    Product.objects.select_related('category').all() for product
+                    in products: print(product.category.name) # تنها یک Query
+                  </div>
+                </div>
+
+                <div class="gallery-post">
+                  <img
+                    class="gallery-post__item cover lazyload"
+                    src="assets/img/cms-1.png"
+                    data-zoom
+                    alt="Django Project Example"
+                  />
+                  <img
+                    class="gallery-post__item cover lazyload"
+                    src="assets/img/cms-2.png"
+                    data-zoom
+                    alt="API Development"
+                  />
+                  <div class="gallery-post__caption">
+                    نمونه پروژه‌های Django توسعه یافته توسط عرفان شکرالله زاده
+                  </div>
+                </div>
+
+                <div class="article-content">
+                  <h3><i class="fas fa-database"></i> 4. کار با پایگاه داده</h3>
+                  <p>
+                    Django ORM ابزار قدرتمندی برای کار با پایگاه داده است. با
+                    استفاده از Migration ها می‌توانید تغییرات مدل‌هایتان را به
+                    صورت ایمن و قابل کنترل اعمال کنید.
+                  </p>
+
+                  <p>
+                    همچنین استفاده از Index ها و Foreign Key های بهینه می‌تواند
+                    عملکرد پایگاه داده شما را تا چندین برابر بهبود بخشد. همیشه
+                    Query های خود را با Django Debug Toolbar بررسی کنید.
+                  </p>
+
+                  <h3><i class="fas fa-cloud"></i> 5. Deploy و Production</h3>
+                  <p>
+                    آماده کردن پروژه Django برای Production نیازمند تنظیمات خاصی
+                    است. از جمله تنظیم DEBUG=False، استفاده از وب سرور مناسب مثل
+                    Nginx، و پیکربندی امنیتی صحیح.
+                  </p>
+
+                  <div class="code-block">
+                    # settings/production.py DEBUG = False ALLOWED_HOSTS =
+                    ['yourdomain.com'] DATABASES = { 'default': { 'ENGINE':
+                    'django.db.backends.postgresql', 'NAME':
+                    os.environ.get('DB_NAME'), 'USER':
+                    os.environ.get('DB_USER'), 'PASSWORD':
+                    os.environ.get('DB_PASSWORD'), 'HOST':
+                    os.environ.get('DB_HOST'), 'PORT':
+                    os.environ.get('DB_PORT'), } } # Security Settings
+                    SECURE_SSL_REDIRECT = True SECURE_HSTS_SECONDS = 31536000
+                    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+                  </div>
+                </div>
+
+                <footer class="footer-post">
+                  <a
+                    class="footer-post__share"
+                    href="https://www.facebook.com/profile.php?id=100082935861062"
+                    ><i class="fab fa-facebook"></i><span>فیس بوک</span></a
+                  >
+                  <a
+                    class="footer-post__share"
+                    href="https://twitter.com/erfan_shokr"
+                    ><i class="fab fa-twitter"></i><span>توییتر</span></a
+                  >
+                  <a
+                    class="footer-post__share"
+                    href="https://www.linkedin.com/in/erfan-shokrollahzadeh-babb95216/"
+                    ><i class="fab fa-linkedin"></i><span>لینکدین</span></a
+                  >
+                </footer>
+              </div>
+
+              <div class="comment-section">
+                <div class="comment-header">
+                  <h2 class="title title--h3">
+                    <i class="fas fa-comments"></i>
+                    نظرات توسعه‌دهندگان <span class="color--light">(4)</span>
+                  </h2>
+                </div>
+
+                <!-- Comment -->
+                <div class="comment-box">
+                  <div class="comment-box__inner">
+                    <svg class="avatar avatar--60" viewBox="0 0 84 84">
+                      <g class="avatar__hexagon">
+                        <image
+                          xlink:href="assets/img/avatar-2.jpg"
+                          height="100%"
+                          width="100%"
+                        />
+                      </g>
+                    </svg>
+                    <div class="comment-box__body">
+                      <h5 class="comment-box__details">
+                        <span
+                          ><i class="fab fa-python"></i> محمد احمدی - Backend
+                          Developer</span
+                        ><span class="comment-box__details-date"
+                          >2 ساعت پیش</span
+                        >
+                      </h5>
+                      <p>
+                        مقاله فوق‌العاده‌ای درباره Django! خصوصاً بخش REST
+                        Framework و بهینه‌سازی Query ها خیلی مفید بود. من هم با
+                        N+1 Problem زیاد درگیر بودم.
+                      </p>
+
+                      <ul class="comment-box__footer">
+                        <li>
+                          <i class="fas fa-thumbs-up"></i>
+                          <span>24</span>
+                        </li>
+                        <li><i class="fas fa-reply"></i> <span>پاسخ</span></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Reply Comment -->
+                  <div
+                    class="comment-box"
+                    style="margin-right: 4rem; margin-top: 1rem"
+                  >
+                    <div class="comment-box__inner">
+                      <svg class="avatar avatar--60" viewBox="0 0 84 84">
+                        <g class="avatar__hexagon">
+                          <image
+                            xlink:href="assets/img/avator3.JPG"
+                            height="100%"
+                            width="100%"
+                          />
+                        </g>
+                      </svg>
+                      <div class="comment-box__body">
+                        <h5 class="comment-box__details">
+                          <span
+                            ><i class="fas fa-user-tie"></i> عرفان شکرالله زاده
+                            - نویسنده</span
+                          ><span class="comment-box__details-date"
+                            >1 ساعت پیش</span
+                          >
+                        </h5>
+                        <p>
+                          ممنون محمد! خوشحالم که مفید بوده. N+1 Problem یکی از
+                          رایج‌ترین مشکلات Django هست. حتماً مقاله بعدی رو هم
+                          بخونید!
+                          <i class="fas fa-heart" style="color: red"></i>
+                        </p>
+
+                        <ul class="comment-box__footer">
+                          <li>
+                            <i class="fas fa-thumbs-up"></i>
+                            <span>12</span>
+                          </li>
+                          <li>
+                            <i class="fas fa-reply"></i>
+                            <span>پاسخ</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Comment -->
+                <div class="comment-box">
+                  <div class="comment-box__inner">
+                    <svg class="avatar avatar--60" viewBox="0 0 84 84">
+                      <g class="avatar__hexagon">
+                        <image
+                          xlink:href="assets/img/avatar-4.jpg"
+                          height="100%"
+                          width="100%"
+                        />
+                      </g>
+                    </svg>
+                    <div class="comment-box__body">
+                      <h5 class="comment-box__details">
+                        <span
+                          ><i class="fas fa-laptop-code"></i> سارا کریمی -
+                          Full-Stack Developer</span
+                        ><span class="comment-box__details-date"
+                          >3 ساعت پیش</span
+                        >
+                      </h5>
+                      <p>
+                        بخش امنیت خیلی جامع بود. من تازه با JWT کار می‌کنم و این
+                        نکات واقعاً کمکم کرد. منتظر مقالات بیشتر هستم!
+                      </p>
+
+                      <ul class="comment-box__footer">
+                        <li>
+                          <i class="fas fa-thumbs-up"></i>
+                          <span>18</span>
+                        </li>
+                        <li><i class="fas fa-reply"></i> <span>پاسخ</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Comment -->
+                <div class="comment-box">
+                  <div class="comment-box__inner">
+                    <svg class="avatar avatar--60" viewBox="0 0 84 84">
+                      <g class="avatar__hexagon">
+                        <image
+                          xlink:href="assets/img/avatar-6.jpg"
+                          height="100%"
+                          width="100%"
+                        />
+                      </g>
+                    </svg>
+                    <div class="comment-box__body">
+                      <h5 class="comment-box__details">
+                        <span
+                          ><i class="fab fa-js"></i> رضا محمدی - Frontend
+                          Developer</span
+                        ><span class="comment-box__details-date"
+                          >5 ساعت پیش</span
+                        >
+                      </h5>
+                      <p>
+                        من Frontend Developer هستم ولی این مقاله خیلی کمکم کرد
+                        تا Backend رو بهتر درک کنم. خصوصاً بخش API Design عالی
+                        بود!
+                      </p>
+
+                      <ul class="comment-box__footer">
+                        <li>
+                          <i class="fas fa-thumbs-up"></i>
+                          <span>15</span>
+                        </li>
+                        <li><i class="fas fa-reply"></i> <span>پاسخ</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Comment form -->
+                <ul class="social-auth">
+                  <li class="social-auth__item">
+                    <i class="fas fa-sign-in-alt"></i> وارد شوید با:
+                  </li>
+                  <li class="social-auth__item">
+                    <a
+                      class="social-auth__link"
+                      href="#"
+                      style="background: #3b5998; color: white"
+                      ><i class="fab fa-facebook"></i
+                    ></a>
+                  </li>
+                  <li class="social-auth__item">
+                    <a
+                      class="social-auth__link"
+                      href="#"
+                      style="background: #1da1f2; color: white"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                  </li>
+                  <li class="social-auth__item">
+                    <a
+                      class="social-auth__link"
+                      href="#"
+                      style="background: #24292e; color: white"
+                      ><i class="fab fa-github"></i
+                    ></a>
+                  </li>
+                  <li class="social-auth__item">
+                    <a
+                      class="social-auth__link"
+                      href="#"
+                      style="background: #0077b5; color: white"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
+                  </li>
+                </ul>
+                <form class="comment-form">
+                  <textarea
+                    id="commentForm"
+                    class="textarea form-control"
+                    required="required"
+                    placeholder="نظر خود را درباره این مقاله بنویسید..."
+                    rows="3"
+                  ></textarea>
+                  <button type="submit" class="btn">
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                  <div class="dropdown dropup">
+                    <i
+                      class="fas fa-smile"
+                      id="dropdownEmoji"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      style="cursor: pointer; padding: 1rem; color: #667eea"
+                    ></i>
+                    <div
+                      class="dropdown-menu dropdown-menu-center"
+                      aria-labelledby="dropdownEmoji"
+                    >
+                      <div class="emoji-wrap">
+                        <img
+                          class="emoji"
+                          src="assets/icons/emoji/emoji-laughing.svg"
+                          title=":laughing:"
+                          alt="laughing"
+                        />
+                        <img
+                          class="emoji"
+                          src="assets/icons/emoji/emoji-happy-2.svg"
+                          title=":happy:"
+                          alt="happy"
+                        />
+                        <img
+                          class="emoji"
+                          src="assets/icons/emoji/emoji-thinking.svg"
+                          title=":thinking:"
+                          alt="thinking"
+                        />
+                        <img
+                          class="emoji"
+                          src="assets/icons/emoji/emoji-nerd.svg"
+                          title=":nerd:"
+                          alt="nerd"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+              © 1404 عرفان شکرالله زاده - Full-Stack Python Developer
+            </footer>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="back-to-top"></div>
+
+    <!-- SVG masks -->
+    <svg class="svg-defs">
+      <clipPath id="avatar-box">
+        <path
+          d="M1.85379 38.4859C2.9221 18.6653 18.6653 2.92275 38.4858 1.85453 56.0986.905299 77.2792 0 94 0c16.721 0 37.901.905299 55.514 1.85453 19.821 1.06822 35.564 16.81077 36.632 36.63137C187.095 56.0922 188 77.267 188 94c0 16.733-.905 37.908-1.854 55.514-1.068 19.821-16.811 35.563-36.632 36.631C131.901 187.095 110.721 188 94 188c-16.7208 0-37.9014-.905-55.5142-1.855-19.8205-1.068-35.5637-16.81-36.63201-36.631C.904831 131.908 0 110.733 0 94c0-16.733.904831-37.9078 1.85379-55.5141z"
+        />
+      </clipPath>
+      <clipPath id="avatar-hexagon">
+        <path
+          d="M0 27.2891c0-4.6662 2.4889-8.976 6.52491-11.2986L31.308 1.72845c3.98-2.290382 8.8697-2.305446 12.8637-.03963l25.234 14.31558C73.4807 18.3162 76 22.6478 76 27.3426V56.684c0 4.6805-2.5041 9.0013-6.5597 11.3186L44.4317 82.2915c-3.9869 2.278-8.8765 2.278-12.8634 0L6.55974 68.0026C2.50414 65.6853 0 61.3645 0 56.684V27.2891z"
+        />
+      </clipPath>
+    </svg>
+
+    <!-- Demo Menu -->
+    <div class="btnSlideNav slideOpen"></div>
+    <div class="btnSlideNav slideClose"></div>
+    <div class="slideNav">
+      <ul class="list-unstyled">
+        <li class="slideNav__item rtl-mode">
+          <h4 class="title title--5">صفحات بیشتر</h4>
+          <a href="ltr/about.html">نسخه چپ چین</a>
+        </li>
+        <li class="slideNav__item"><a href="one-page.html">صفحه تکی</a></li>
+        <li class="slideNav__item">
+          <a href="background-2.html">پس زمینه مثلثی</a>
+        </li>
+        <li class="slideNav__item">
+          <a href="works_v2.html">نمونه کارها نسخه 2</a>
+        </li>
+      </ul>
+      <a href="dark/about.html" class="btn btn--dark">نسخه تیره</a>
+    </div>
+    <div class="overlay-slideNav"></div>
+    <!-- Demo Menu -->
+
+    <!-- JavaScripts -->
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/plugins.min.js"></script>
+    <script src="assets/js/common.js"></script>
+    <script src="assets/demo/plugins-demo.js"></script>
+
+    <script>
+      // Reading Progress Bar
+      $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var height = $(document).height() - $(window).height();
+        var progress = (scroll / height) * 100;
+        $(".reading-progress").css("width", progress + "%");
+      });
+
+      // Smooth Scroll for Internal Links
+      $('a[href^="#"]').click(function (e) {
+        e.preventDefault();
+        var target = $(this.hash);
+        if (target.length) {
+          $("html, body").animate(
+            {
+              scrollTop: target.offset().top - 100,
+            },
+            500,
+          );
+        }
+      });
+
+      // Code Block Copy Functionality
+      $(".code-block").each(function () {
+        var $this = $(this);
+        var copyBtn = $(
+          '<button class="copy-btn"><i class="fas fa-copy"></i></button>',
+        );
+        $this.css("position", "relative").append(copyBtn);
+
+        copyBtn.click(function () {
+          var code = $this.text().trim();
+          navigator.clipboard.writeText(code).then(function () {
+            copyBtn.html('<i class="fas fa-check"></i>');
+            setTimeout(function () {
+              copyBtn.html('<i class="fas fa-copy"></i>');
+            }, 2000);
+          });
+        });
+      });
+
+      // Enhanced Comment Interaction
+      $(".comment-box__footer li").click(function () {
+        var $this = $(this);
+        if ($this.find("i").hasClass("fa-thumbs-up")) {
+          var count = parseInt($this.find("span").text());
+          $this.find("span").text(count + 1);
+          $this.find("i").addClass("liked").css("color", "#667eea");
+        }
+      });
+    </script>
+
+    <style>
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+
+      .copy-btn:hover {
+        opacity: 1;
+        transform: translateY(-2px);
+      }
+
+      .liked {
+        animation: likeAnimation 0.5s ease;
+      }
+
+      @keyframes likeAnimation {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </body>
+</html>
