@@ -458,7 +458,7 @@
                       type="text"
                       class="form-control"
                       id="nameContact"
-                      name="nameContact"
+                      name="from_name"
                       placeholder="Enter your full name"
                       required="required"
                       autocomplete="on"
@@ -475,7 +475,7 @@
                       type="email"
                       class="form-control"
                       id="emailContact"
-                      name="emailContact"
+                      name="reply_to"
                       placeholder="Enter your email address"
                       required="required"
                       autocomplete="on"
@@ -494,7 +494,7 @@
                       type="text"
                       class="form-control"
                       id="subjectContact"
-                      name="subjectContact"
+                      name="subject"
                       placeholder="What's this about?"
                       autocomplete="on"
                     />
@@ -506,7 +506,7 @@
                     <textarea
                       class="textarea form-control"
                       id="messageContact"
-                      name="messageContact"
+                      name="message"
                       placeholder="Tell me about your project or just say hello..."
                       rows="6"
                       required="required"
@@ -524,7 +524,7 @@
                     <div id="form-message" class="form-message"></div>
                   </div>
                   <div class="col-12 col-md-6 order-1 order-md-2 text-right">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" id="submit-btn" class="btn btn-primary">
                       <i class="font-icon icon-send"></i> Send Message
                     </button>
                   </div>
@@ -580,6 +580,9 @@
     <script src="../../assets/js/plugins.min.js"></script>
     <script src="../../assets/js/common.js"></script>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <!-- Custom Mapbox init for Eskişehir, Turkey -->
     <script>
       // Initialize Mapbox map centered on Eskişehir, Turkey
@@ -617,24 +620,47 @@
       });
     </script>
 
-    <!-- Contact Form Handler -->
+    <!-- Contact Form Handler with EmailJS -->
     <script>
-      // Contact form submission handler
+      // =====================================================================
+      // EmailJS Contact Form Integration
+      // =====================================================================
+      // SETUP INSTRUCTIONS (one-time, takes ~3 minutes):
+      //
+      // 1. Go to https://www.emailjs.com and sign up (free — 200 emails/month)
+      // 2. Go to "Email Services" → Add Service → choose Gmail → connect your
+      //    erfan.shokr300@gmail.com account. Copy the Service ID (e.g. "service_xxxxxx")
+      // 3. Go to "Email Templates" → Create New Template with these variables:
+      //      Subject: {{subject}}
+      //      Content:
+      //        Name: {{from_name}}
+      //        Email: {{reply_to}}
+      //        Message: {{message}}
+      //    Set "To Email" to your email. Copy the Template ID (e.g. "template_xxxxxx")
+      // 4. Go to "Account" → copy your Public Key (e.g. "XXXXXXXXXXXXXXX")
+      // 5. Replace the 3 placeholder values below with your real IDs:
+      // =====================================================================
+
+      const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";     // ← Replace with your EmailJS Public Key
+      const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";     // ← Replace with your EmailJS Service ID
+      const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";   // ← Replace with your EmailJS Template ID
+
       document.addEventListener("DOMContentLoaded", function () {
+        // Initialize EmailJS
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
         const contactForm = document.getElementById("contact-form");
         const formMessage = document.getElementById("form-message");
+        const submitBtn = document.getElementById("submit-btn");
 
         if (contactForm) {
           contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = new FormData(contactForm);
-            const name = formData.get("nameContact");
-            const email = formData.get("emailContact");
-            const subject =
-              formData.get("subjectContact") || "Contact Form Submission";
-            const message = formData.get("messageContact");
+            // Get form values for validation
+            const name = document.getElementById("nameContact").value.trim();
+            const email = document.getElementById("emailContact").value.trim();
+            const message = document.getElementById("messageContact").value.trim();
 
             // Simple validation
             if (!name || !email || !message) {
@@ -649,23 +675,44 @@
               return;
             }
 
-            // Simulate form submission (replace with actual form handling)
-            showMessage(
-              "Thank you for your message! I'll get back to you soon.",
-              "success",
-            );
-            contactForm.reset();
+            // Disable button and show sending state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="font-icon icon-send"></i> Sending...';
+
+            // Send email via EmailJS
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+              .then(function () {
+                showMessage(
+                  "✅ Thank you! Your message has been sent successfully. I'll get back to you soon!",
+                  "success"
+                );
+                contactForm.reset();
+              })
+              .catch(function (error) {
+                console.error("EmailJS Error:", error);
+                showMessage(
+                  "❌ Oops! Something went wrong. Please try emailing me directly at erfan.shokr300@gmail.com",
+                  "error"
+                );
+              })
+              .finally(function () {
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="font-icon icon-send"></i> Send Message';
+              });
           });
         }
 
         function showMessage(text, type) {
           formMessage.textContent = text;
-          formMessage.className = `form-message ${type}`;
+          formMessage.className = "form-message " + type;
+          formMessage.style.display = "block";
 
-          // Hide message after 5 seconds
-          setTimeout(() => {
+          // Hide message after 8 seconds
+          setTimeout(function () {
             formMessage.style.display = "none";
-          }, 5000);
+            formMessage.className = "form-message";
+          }, 8000);
         }
       });
     </script>
