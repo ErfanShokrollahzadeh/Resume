@@ -384,12 +384,16 @@
                       class="contact-form"
                       data-toggle="validator"
                     >
+                      <!-- Hidden fields for EmailJS template variables -->
+                      <input type="hidden" name="name" id="hiddenName" />
+                      <input type="hidden" name="time" id="hiddenTime" />
+
                       <div class="form-group" style="margin-bottom: 1rem">
                         <input
                           type="text"
                           class="form-control"
                           id="nameContact"
-                          name="nameContact"
+                          name="from_name"
                           placeholder="نام و نام خانوادگی"
                           required="required"
                           autocomplete="on"
@@ -407,7 +411,7 @@
                           type="email"
                           class="form-control"
                           id="emailContact"
-                          name="emailContact"
+                          name="reply_to"
                           placeholder="آدرس ایمیل"
                           required="required"
                           autocomplete="on"
@@ -425,7 +429,7 @@
                           type="text"
                           class="form-control"
                           id="subjectContact"
-                          name="subjectContact"
+                          name="subject"
                           placeholder="موضوع پیام"
                           required="required"
                           style="
@@ -441,7 +445,7 @@
                         <textarea
                           class="textarea form-control"
                           id="messageContact"
-                          name="messageContact"
+                          name="message"
                           placeholder="متن پیام شما..."
                           rows="5"
                           required="required"
@@ -779,6 +783,9 @@
     <script src="../assets/js/plugins.min.js"></script>
     <script src="../assets/js/common.js"></script>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <!-- Mapbox init -->
     <script src="../assets/js/mapbox.init.js"></script>
 
@@ -837,177 +844,90 @@
       });
     </script>
 
-    <!-- Contact Form Script -->
+    <!-- Contact Form Script with EmailJS -->
     <script>
+      var EMAILJS_PUBLIC_KEY = "XdTDwuULXQ2B1FbVu";
+      var EMAILJS_SERVICE_ID = "service_97uc2lq";
+      var EMAILJS_TEMPLATE_ID = "template_mllqf5a";
+
       document.addEventListener("DOMContentLoaded", function () {
-        const contactForm = document.getElementById("contact-form");
-        const submitBtn = document.getElementById("submitBtn");
-        const submitIcon = document.getElementById("submitIcon");
-        const submitText = document.getElementById("submitText");
+        emailjs.init(EMAILJS_PUBLIC_KEY);
 
-        // Form validation function
+        var contactForm = document.getElementById("contact-form");
+        var submitBtn = document.getElementById("submitBtn");
+        var submitIcon = document.getElementById("submitIcon");
+        var submitText = document.getElementById("submitText");
+
         function validateForm() {
-          const name = document.getElementById("nameContact").value.trim();
-          const email = document.getElementById("emailContact").value.trim();
-          const subject = document
-            .getElementById("subjectContact")
-            .value.trim();
-          const message = document
-            .getElementById("messageContact")
-            .value.trim();
+          var name = document.getElementById("nameContact").value.trim();
+          var email = document.getElementById("emailContact").value.trim();
+          var subject = document.getElementById("subjectContact").value.trim();
+          var message = document.getElementById("messageContact").value.trim();
 
-          if (!name) {
-            showNotification("لطفاً نام خود را وارد کنید", "error");
-            return false;
-          }
-
-          if (!email || !isValidEmail(email)) {
-            showNotification("لطفاً یک آدرس ایمیل معتبر وارد کنید", "error");
-            return false;
-          }
-
-          if (!subject) {
-            showNotification("لطفاً موضوع پیام را وارد کنید", "error");
-            return false;
-          }
-
-          if (!message) {
-            showNotification("لطفاً متن پیام را وارد کنید", "error");
-            return false;
-          }
-
+          if (!name) { showNotification("لطفاً نام خود را وارد کنید", "error"); return false; }
+          if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showNotification("لطفاً یک آدرس ایمیل معتبر وارد کنید", "error"); return false; }
+          if (!subject) { showNotification("لطفاً موضوع پیام را وارد کنید", "error"); return false; }
+          if (!message) { showNotification("لطفاً متن پیام را وارد کنید", "error"); return false; }
           return true;
         }
 
-        // Email validation function
-        function isValidEmail(email) {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return emailRegex.test(email);
-        }
-
-        // Show notification function
         function showNotification(message, type) {
-          // Remove existing notifications
-          const existingNotification = document.querySelector(".notification");
-          if (existingNotification) {
-            existingNotification.remove();
-          }
+          var existingNotification = document.querySelector(".notification");
+          if (existingNotification) existingNotification.remove();
 
-          // Create notification element
-          const notification = document.createElement("div");
-          notification.className = `notification notification-${type}`;
-          notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: ${
-              type === "success"
-                ? "linear-gradient(135deg, #4CAF50, #45a049)"
-                : "linear-gradient(135deg, #f44336, #d32f2f)"
-            };
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 1000;
-            font-weight: 500;
-            max-width: 350px;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-          `;
+          var notification = document.createElement("div");
+          notification.className = "notification notification-" + type;
+          notification.style.cssText = "position:fixed;top:20px;right:20px;background:" +
+            (type === "success" ? "linear-gradient(135deg,#4CAF50,#45a049)" : "linear-gradient(135deg,#f44336,#d32f2f)") +
+            ";color:white;padding:1rem 1.5rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);z-index:1000;font-weight:500;max-width:350px;transform:translateX(100%);transition:transform 0.3s ease;";
           notification.textContent = message;
-
           document.body.appendChild(notification);
-
-          // Animate in
-          setTimeout(() => {
-            notification.style.transform = "translateX(0)";
-          }, 100);
-
-          // Auto remove after 5 seconds
-          setTimeout(() => {
-            notification.style.transform = "translateX(100%)";
-            setTimeout(() => notification.remove(), 300);
-          }, 5000);
+          setTimeout(function() { notification.style.transform = "translateX(0)"; }, 100);
+          setTimeout(function() { notification.style.transform = "translateX(100%)"; setTimeout(function() { notification.remove(); }, 300); }, 5000);
         }
 
-        // Form submit handler
         contactForm.addEventListener("submit", function (e) {
           e.preventDefault();
+          if (!validateForm()) return;
 
-          if (!validateForm()) {
-            return;
-          }
-
-          // Change button state to loading
           submitBtn.disabled = true;
           submitBtn.style.opacity = "0.8";
           submitIcon.className = "fas fa-spinner fa-spin";
           submitText.textContent = "در حال ارسال...";
 
-          // Simulate form submission (replace with actual form submission logic)
-          setTimeout(() => {
-            // Get form data
-            const formData = {
-              name: document.getElementById("nameContact").value.trim(),
-              email: document.getElementById("emailContact").value.trim(),
-              subject: document.getElementById("subjectContact").value.trim(),
-              message: document.getElementById("messageContact").value.trim(),
-            };
+          // Set hidden fields for EmailJS template
+          document.getElementById("hiddenName").value = document.getElementById("nameContact").value.trim();
+          document.getElementById("hiddenTime").value = new Date().toLocaleString();
 
-            // Here you would normally send the data to your server
-            console.log("Form Data:", formData);
-
-            // Reset button state
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = "1";
-            submitIcon.className = "fas fa-check";
-            submitText.textContent = "ارسال شد!";
-
-            // Show success message
-            showNotification(
-              "پیام شما با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت.",
-              "success"
-            );
-
-            // Reset form
-            contactForm.reset();
-
-            // Reset button after 3 seconds
-            setTimeout(() => {
-              submitIcon.className = "fas fa-paper-plane";
-              submitText.textContent = "ارسال پیام";
-            }, 3000);
-          }, 2000); // Simulate 2 second delay
+          emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+            .then(function () {
+              submitIcon.className = "fas fa-check";
+              submitText.textContent = "ارسال شد!";
+              showNotification("✅ پیام شما با موفقیت ارسال شد! به زودی با شما تماس خواهیم گرفت.", "success");
+              contactForm.reset();
+              setTimeout(function() { submitIcon.className = "fas fa-paper-plane"; submitText.textContent = "ارسال پیام"; }, 3000);
+            })
+            .catch(function (error) {
+              console.error("EmailJS Error:", error);
+              showNotification("❌ خطا در ارسال پیام. لطفاً مستقیماً ایمیل بزنید: erfan.shokr300@gmail.com", "error");
+            })
+            .finally(function () {
+              submitBtn.disabled = false;
+              submitBtn.style.opacity = "1";
+            });
         });
 
-        // Add hover effects to button
         submitBtn.addEventListener("mouseenter", function () {
-          if (!this.disabled) {
-            this.style.transform = "translateY(-2px)";
-            this.style.boxShadow = "0 5px 15px rgba(102, 126, 234, 0.4)";
-          }
+          if (!this.disabled) { this.style.transform = "translateY(-2px)"; this.style.boxShadow = "0 5px 15px rgba(102, 126, 234, 0.4)"; }
         });
-
         submitBtn.addEventListener("mouseleave", function () {
-          if (!this.disabled) {
-            this.style.transform = "translateY(0)";
-            this.style.boxShadow = "none";
-          }
+          if (!this.disabled) { this.style.transform = "translateY(0)"; this.style.boxShadow = "none"; }
         });
 
-        // Add focus styles to form inputs
-        const formInputs = document.querySelectorAll(".form-control");
-        formInputs.forEach((input) => {
-          input.addEventListener("focus", function () {
-            this.style.borderColor = "#667eea";
-            this.style.boxShadow = "0 0 0 3px rgba(102, 126, 234, 0.1)";
-          });
-
-          input.addEventListener("blur", function () {
-            this.style.borderColor = "rgba(255, 255, 255, 0.1)";
-            this.style.boxShadow = "none";
-          });
+        var formInputs = document.querySelectorAll(".form-control");
+        formInputs.forEach(function(input) {
+          input.addEventListener("focus", function () { this.style.borderColor = "#667eea"; this.style.boxShadow = "0 0 0 3px rgba(102, 126, 234, 0.1)"; });
+          input.addEventListener("blur", function () { this.style.borderColor = "rgba(255, 255, 255, 0.1)"; this.style.boxShadow = "none"; });
         });
       });
     </script>

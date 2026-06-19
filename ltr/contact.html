@@ -304,12 +304,16 @@
                       class="contact-form"
                       data-toggle="validator"
                     >
+                      <!-- Hidden fields for EmailJS template variables -->
+                      <input type="hidden" name="name" id="hiddenName" />
+                      <input type="hidden" name="time" id="hiddenTime" />
+
                       <div class="form-group">
                         <input
                           type="text"
                           class="form-control"
                           id="nameContact"
-                          name="nameContact"
+                          name="from_name"
                           placeholder="Full Name"
                           required="required"
                           autocomplete="on"
@@ -321,7 +325,7 @@
                           type="email"
                           class="form-control"
                           id="emailContact"
-                          name="emailContact"
+                          name="reply_to"
                           placeholder="Email Address"
                           required="required"
                           autocomplete="on"
@@ -333,7 +337,7 @@
                           type="text"
                           class="form-control"
                           id="subjectContact"
-                          name="subjectContact"
+                          name="subject"
                           placeholder="Subject"
                           required="required"
                         />
@@ -343,14 +347,16 @@
                         <textarea
                           class="textarea form-control"
                           id="messageContact"
-                          name="messageContact"
+                          name="message"
                           placeholder="Your Message..."
                           rows="5"
                           required="required"
                         ></textarea>
                       </div>
 
-                      <button type="submit" class="submit-btn">
+                      <div id="form-message" style="margin-bottom: 1rem; padding: 0.75rem; border-radius: 6px; display: none;"></div>
+
+                      <button type="submit" id="submit-btn" class="submit-btn">
                         <i class="fas fa-paper-plane"></i>
                         Send Message
                       </button>
@@ -472,9 +478,69 @@
     <script src="../assets/js/plugins.min.js"></script>
     <script src="../assets/js/common.js"></script>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <!-- Mapbox init -->
     <script src="../assets/js/mapbox.init.js"></script>
 
     <script src="../assets/demo/plugins-demo.js"></script>
+
+    <!-- Contact Form Handler with EmailJS -->
+    <script>
+      var EMAILJS_PUBLIC_KEY = "XdTDwuULXQ2B1FbVu";
+      var EMAILJS_SERVICE_ID = "service_97uc2lq";
+      var EMAILJS_TEMPLATE_ID = "template_mllqf5a";
+
+      document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        var contactForm = document.getElementById("contact-form");
+        var formMessage = document.getElementById("form-message");
+        var submitBtn = document.getElementById("submit-btn");
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var name = document.getElementById("nameContact").value.trim();
+            var email = document.getElementById("emailContact").value.trim();
+            var message = document.getElementById("messageContact").value.trim();
+
+            if (!name || !email || !message) { showMessage("Please fill in all required fields.", "error"); return; }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showMessage("Please enter a valid email address.", "error"); return; }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            document.getElementById("hiddenName").value = name;
+            document.getElementById("hiddenTime").value = new Date().toLocaleString();
+
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
+              .then(function () {
+                showMessage("\u2705 Thank you! Your message has been sent successfully.", "success");
+                contactForm.reset();
+              })
+              .catch(function (error) {
+                console.error("EmailJS Error:", error);
+                showMessage("\u274c Something went wrong. Please email me directly at erfan.shokr300@gmail.com", "error");
+              })
+              .finally(function () {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+              });
+          });
+        }
+
+        function showMessage(text, type) {
+          formMessage.textContent = text;
+          formMessage.style.display = "block";
+          formMessage.style.background = type === "success" ? "#d4edda" : "#f8d7da";
+          formMessage.style.color = type === "success" ? "#155724" : "#721c24";
+          formMessage.style.border = "1px solid " + (type === "success" ? "#c3e6cb" : "#f5c6cb");
+          setTimeout(function () { formMessage.style.display = "none"; }, 8000);
+        }
+      });
+    </script>
   </body>
 </html>
