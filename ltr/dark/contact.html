@@ -449,6 +449,9 @@
                 class="contact-form"
                 data-toggle="validator"
               >
+                <!-- Hidden fields for EmailJS template variables -->
+                <input type="hidden" name="name" id="hiddenName" />
+                <input type="hidden" name="time" id="hiddenTime" />
                 <div class="row">
                   <div class="form-group col-12 col-md-6">
                     <label for="nameContact" class="form-label"
@@ -641,9 +644,9 @@
       // 5. Replace the 3 placeholder values below with your real IDs:
       // =====================================================================
 
-      const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";     // ← Replace with your EmailJS Public Key
-      const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";     // ← Replace with your EmailJS Service ID
-      const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";   // ← Replace with your EmailJS Template ID
+      const EMAILJS_PUBLIC_KEY = "XdTDwuULXQ2B1FbVu";       // EmailJS Public Key
+      const EMAILJS_SERVICE_ID = "service_97uc2lq";          // EmailJS Service ID
+      const EMAILJS_TEMPLATE_ID = "template_mllqf5a";        // EmailJS Template ID
 
       document.addEventListener("DOMContentLoaded", function () {
         // Initialize EmailJS
@@ -678,6 +681,10 @@
             // Disable button and show sending state
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="font-icon icon-send"></i> Sending...';
+
+            // Set hidden fields for EmailJS template
+            document.getElementById("hiddenName").value = name;
+            document.getElementById("hiddenTime").value = new Date().toLocaleString();
 
             // Send email via EmailJS
             emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm)
